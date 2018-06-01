@@ -98,15 +98,17 @@
 		  		<div class="mail">
 					<label for="email">Direccion Email:<span>*</span></label>
 					<input type="email" name="elog" id="email-log" value="">
+					<span class="errormail"></span>
 				</div>
 				<div class="pass">
 					<label for="pass">Password<span>*</span></label>
 					<input type="password" name="plog" id="pass-log" value="">
+					<span class="errorpass1 errorpass2"></span>
 				</div>
 				<div class="remember">
-					<input type="checkbox" name="recordar" >Recuerdame<br>
+					<input type="checkbox" id="checkregistro" name="recordar" >Recuerdame
 				</div>	
-				<button type="submit" name="signin">Entrar</button>
+				<button type="submit" onclick="validarlogin()" name="signin">Entrar</button>
 				<a href="#">Has olvidado la contraseña?</a>
 		  </form>
       </section>
@@ -116,8 +118,42 @@
 	
 	 <script src="js/slideout-1.0.1/slidetoogle.js" type="text/javascript"></script>
 	 <script>
-		
-		 
+		 	 function validarlogin(){
+				var mail = document.getElementById("email-log").value;
+				var pass = document.getElementById("pass-log").value;
+				var recordar = document.getElementById("checkregistro").checked;
+				var spanmail= document.getElementsByClassName("errormail")[0];
+				var spanpass1= document.getElementsByClassName("errorpass1")[0];
+				var spanpass2= document.getElementsByClassName("errorpass2")[0];
+				var spancheck = document.querySelector("#checkregistro");
+
+				if(mail != ''){
+					var exp = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
+					if(!exp.test(mail)){
+						spanmail.innerHTML = "correo incorrecto";
+						return false;
+					}
+				}
+				
+				if(pass != ''){
+					var exp ="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,}$";
+					var  passlength  = pass.length;
+					if(passlength < 6){
+						spanpass1.innerHTML = "Minimo 6 caracteres";
+						return false;
+					}
+					if(!exp.test(pass)){
+						spanpass2.innerHTML = "Minimo una mayuscula, una minuscula y un digito";	
+						return false;
+					}
+				}
+				return true;
+			}
+
+			function enviarSubmit(){
+				
+				console.log(validarlogin());
+			}
 	</script>
 </body>
 </html>
