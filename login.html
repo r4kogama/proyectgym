@@ -47,7 +47,7 @@
       	<p>Crea tu cuenta de PROFITNESS</p>
       	<button class="btn-cuenta">Crear una cuenta</button>
       	<div class="contenedor-formulario">
-      	<form action="registro.php" method="post" id="formreg" onSubmit="validaSubmit(event)">
+      	<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
       		<section class="info-personal">
 				<h3>Informacion Personal</h3>
 				<ul>
@@ -93,7 +93,7 @@
 					</li>
 					<li class="repass">
 						<label for="pass">Confirmar password:<span>*</span></label>
-						<input type="password" name="repass" id="repass" value="" required>
+						<input type="password" name="repass" onBlur="repPass(this)" disabled id="repass" value="" required>
 						<span class="errorpass"></span>
 					</li>
 					<li>
@@ -137,10 +137,11 @@
 	 <script>
 
 		 //boton cuenta
-			var btncuenta = document.querySelector(".btn-cuenta");
-		  btncuenta.onclick = function() {
-			  var formreg= document.getElementById("formreg");
-			  formreg.classList.toggle("showform");
+		  var btncuenta = document.getElementsByClassName("btn-cuenta")[0];
+		  btncuenta.onclick = function() {toggleregistro()};
+
+		  function toggleregistro(){
+			document.getElementsByClassName("formreg")[0].classList.toggle("showform");
 		  }
 		  
 		//mayusculas a minusculas
@@ -189,6 +190,7 @@
 	   //validar edad
 	   function validarEdad(input){		
 			   if(input != undefined){
+				   debugger;
 				   var msg3 = input.parentElement.querySelectorAll("span")[1];
 				   if(input.name == "edad"){
 					   if(input.value == ""){
@@ -231,8 +233,10 @@
 	   }
 
 	   //validar pass
+	   var  enablepass = document.getElementById("repass");
 	   var inputpass = document.getElementById("pass");
 	   inputpass.onblur = function() {
+		   console.log('onblur');
 		   var exp = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
 		   var msg = inputpass.parentElement.querySelectorAll("span")[1];
 			   if(exp.test(inputpass.value) ==  false){
@@ -243,9 +247,25 @@
 			   }else{
 					msg.style.color = "#4CAF50";
 				   msg.innerHTML ="Valido";
+				   enablepass.disabled= false;	
+					return inputpass.value;
 			   }
 	   }
-	   
+
+	   //repetir password
+	   function repPass(passrep){
+		   debugger;
+		   var pasvalid = inputpass.onblur();//contraseña usuario
+		   var msg = passrep.parentElement.querySelectorAll("span")[1];
+		   if(pasvalid === passrep.value){
+				msg.style.color = "#4CAF50";
+				msg.innerHTML = "Coincide";
+		   }else{
+				msg.style.color = "tomato";
+				msg.innerHTML = "Password no coincide";
+		   }
+	   }
+
 
 	   //caracteristicas del password
 	   function validarPass(input){
@@ -254,7 +274,6 @@
 		   var msgnum = input.parentElement.querySelectorAll("span")[3];
 		   var msglett = input.parentElement.querySelectorAll("span")[4];
 			   // validad minuscula
-			   debugger;
 			   var lowLetter = /[a-z]/;
 			   if(lowLetter.test(input.value)){
 					msgmin.style.color = "tomato";
@@ -272,52 +291,59 @@
 					msgmay.innerHTML = "Incluye  mayusculas";
 			   }
 			   //validar numero
-			   var number = /[0-9]/;
-			   if(number.test(input.value) > 1){
-					msgnum.style.color ="tomato";
+			   var number = /[0-9]\d/;
+			   console.log(number.test(input.value));
+			   if(number.test(input.value) > true){
+				
 					msgnum.innerHTML = "";
 			   }else{
+				msgnum.style.color = "tomato";
 					msgnum.innerHTML = "Incluye algun numero";
 			   }
 			   // validar longitud
-			   if(input.value.length >= 6) {
-					msglett.style.color ='tomato';
-					msglett.innerHTML = "Minimo 6 letras";
-			   }else{
+			   if(input.value.length >= 6 && input.value.length <= 15) {
 					msglett.innerHTML = "";
-			   }
-			   if(input.value.length <= 15){
-					msglett.innerHTML = "Maximo 15 letras";
-					msglett.style.color ='tomato';
 			   }else{
-					msglett.innerHTML = "";
+					msglett.style.color ='tomato';
+					msglett.innerHTML = "Entre 6 y 15 caracteres";
 			   }
+	
 	   	}
-		 
 		 
 			 //funcion validar  campos del formulario
 		   	function validaSubmit(ev) {
 				var expemail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
-				var exppass = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+				var exppass = /(?=^.{6,15}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+				var pass = document.getElementById("pass");
+				var repas = document.getElementById("repass");
 				var mail = document.getElementById("email");
 				var name = document.getElementById("nombre");
+				var edad = document.getElementById("años");
+				var check = document.getElementById("privacidad");
 				var lastname = document.getElementById("apellido");
-				var comentario = document.getElementById("coment");
 
-				if(mail.value.length == 0 || !expemail.test(mail.value)){ //si esta vacio y no es una expr regular
-					alert("Revisa campo email");
+				if(mail.value.length == 0 || !expemail.test(mail.value) || expemail.test(mail.value)){ //si esta vacio y no es una expr regular
+					alert("Revisa campo email.");
+					ev.preventDefault(); // desabilita el submit y no envia el formulario
+				}else if(pass.value.length == 0 || !exppass.test(pass.value) || exppass.test(pass.value)){ //si esta vacio y no es una expr regular
+					alert("Revisa campo password.");
+					ev.preventDefault(); // desabilita el submit y no envia el formulario
+				}else if(repas.value.length == 0 || !exppass.test(repas.value) || exppass.test(repas.value)){
+					alert("Revisa repeticion de password");
 					ev.preventDefault(); // desabilita el submit y no envia el formulario
 				}else if(name.value.length  < 3 || name.value.length > 15 ){
-					alert("Revisa campo nombre maximo 16 letras");
+					alert("Revisa campo nombre 16 caracteres max.");
 					ev.preventDefault();
 				}else if(lastname.value.length < 5 ||  lastname.value.length > 50 ){
-					alert("Revisa campo apellido maximo 50 letras");
+					alert("Revisa campo apellido 50 caracteres max.");
 					ev.preventDefault();
-				}else if(comentario.value.length == 0 || comentario.value.length > 50 ){
-					alert("Revisa campo comentarios maximo 50 letras");
+				}else if(edad.value == ""){
+					alert("revisa campo edad");
 					ev.preventDefault();
-				}
-				
+				}else if(check.checked == false){
+					alert("Acepta los terminos y condiciones");
+					ev.preventDefault();
+				}	
 			}
 		   
 	   
