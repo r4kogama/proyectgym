@@ -45,11 +45,9 @@
       <section id="clientenuevo">
       	<h2>Nueva cuenta</h2>
       	<p>Crea tu cuenta de PROFITNESS</p>
-      	<div>
-      		<h2>Crear una cuenta</h2>
-      	</div>
+      	<button class="btn-cuenta">Crear una cuenta</button>
       	<div class="contenedor-formulario">
-      	<form action="registro.php" method="post" onSubmit="validaSubmit(event)">
+      	<form action="registro.php" method="post" id="formreg" onSubmit="validaSubmit(event)">
       		<section class="info-personal">
 				<h3>Informacion Personal</h3>
 				<ul>
@@ -138,6 +136,13 @@
 	 <script src="js/slideout-1.0.1/slidetoogle.js" type="text/javascript"></script>
 	 <script>
 
+		 //boton cuenta
+			var btncuenta = document.querySelector(".btn-cuenta");
+		  btncuenta.onclick = function() {
+			  var formreg= document.getElementById("formreg");
+			  formreg.classList.toggle("showform");
+		  }
+		  
 		//mayusculas a minusculas
 		var inputclass = document.getElementsByClassName("inLow");
 		function minuscula(){
@@ -168,7 +173,7 @@
 	   //validar apellido
 	   function validarApellido(input)	{
 		   if(input != undefined){
-			   var exp =/^[a-z\d_]{6,45}$/i;
+			   var exp =/^[a-z\d_]{6,49}$/i;
 			   var msg2 = input.parentElement.querySelectorAll("span")[1];
 			   if(input.name == "lastname"){
 				   if(exp.test(input.value) == false){
@@ -180,7 +185,7 @@
 			   }
 		   }
 	   }
-
+		 
 	   //validar edad
 	   function validarEdad(input){		
 			   if(input != undefined){
@@ -198,7 +203,6 @@
 
 		//validar check
 	   function comprobarCheck(input) {
-		   debugger;
 			var msg =  input.parentElement.querySelector("span");
 				if(input.checked == true){
 					msg.innerHTML = "";
@@ -288,19 +292,35 @@
 			   }else{
 					msglett.innerHTML = "";
 			   }
+	   	}
+		 
+		 
+			 //funcion validar  campos del formulario
+		   	function validaSubmit(ev) {
+				var expemail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
+				var exppass = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+				var mail = document.getElementById("email");
+				var name = document.getElementById("nombre");
+				var lastname = document.getElementById("apellido");
+				var comentario = document.getElementById("coment");
 
-			   //funcion validar  campos del formulario
-			function validaSubmit(ev) {
-				//validar campos
-				var cond2 = validarForm(document.getElementById("name"));
-				var cond3 = validarForm(document.getElementById("direccion"));
-				var cond4 = validarEmail(document.getElementById("email"));
-				if ((cond1 == false) || (cond2 == false) || (cond3 == false) || (cond4 == false) ) {
+				if(mail.value.length == 0 || !expemail.test(mail.value)){ //si esta vacio y no es una expr regular
+					alert("Revisa campo email");
 					ev.preventDefault(); // desabilita el submit y no envia el formulario
+				}else if(name.value.length  < 3 || name.value.length > 15 ){
+					alert("Revisa campo nombre maximo 16 letras");
+					ev.preventDefault();
+				}else if(lastname.value.length < 5 ||  lastname.value.length > 50 ){
+					alert("Revisa campo apellido maximo 50 letras");
+					ev.preventDefault();
+				}else if(comentario.value.length == 0 || comentario.value.length > 50 ){
+					alert("Revisa campo comentarios maximo 50 letras");
+					ev.preventDefault();
 				}
+				
 			}
-
-	   }
+		   
+	   
 </script>
 </body>
 </html>
