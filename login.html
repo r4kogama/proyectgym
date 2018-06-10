@@ -8,7 +8,7 @@
 	<link rel="icon" href="img/" type="image/png" sizes="16x16">
 	 <!-- CSS-->
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" 	href="css/font-awesome.min.css">
+	<link href="css/fontawesome.min.css" rel="stylesheet" type="text/css" >
 	<link href="css/index.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<!-- JS-->
@@ -18,99 +18,128 @@
 </head>
 <body>
 	<header>
-    <nav id="menu" class="menu-oculto">
-       	<ul>
-       		<li><a href="#">Home</a></li>
-       		<li><a href="#">pag2</a></li>
-       		<li><a href="#">pag3</a></li>
-       		<li><a href="#">pag4</a></li>
-       		<li><a href="#">contact</a></li>
-       	</ul>
-    </nav>
+		<nav id="menu" class="menu-oculto">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">pag2</a></li>
+				<li><a href="#">pag3</a></li>
+				<li><a href="#">pag4</a></li>
+				<li><a href="#">contact</a></li>
+			</ul>
+		</nav>
 	</header>
     <main id="main" class="panel panel-header principal">
-      <div>
-        <button class="btn-hamburger toggle-button js-slideout-toggle">☰</button>
-        <h2>Menu</h2>
-      </div>
-      <div id="logo">
-      	<img src="" alt="logo">
-      	<h1>PRO<span>FITNESS</span></h1>
-      </div>
-      <div id="log" class="btn-login">
-      	<h2>LOGIN</h2>
-      </div>
-      <div id="cesta" class="btn-cesta"></div>
-      <div class="ctn-articulo">0</div>
-      <section id="clientenuevo">
-      	<h2>Nueva cuenta</h2>
-      	<p>Crea tu cuenta de PROFITNESS</p>
-      	<button class="btn-cuenta">Crear una cuenta</button>
-      	<div class="contenedor-formulario">
-      	<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
-      		<section class="info-personal">
-				<h3>Informacion Personal</h3>
-				<ul>
-					<li  class="in-name">
-						<label for="nombre">Nombre:<span>*</span></label>
-						<input type="text"  name="nom" onBlur="validarNombre(this)" id="nombre" value="" required>
-						<span class="errornom"></span>
-					</li>
-					<li class="in-lastname">
-						<label for="apellido">Apellidos:<span>*</span></label>
-						<input type="text"  name="lastname"  onBlur="validarApellido(this)" id="apellido" value=""required>
-						<span class="errorlast"></span>
+		<section id="header">
+			<div class="box-bur">
+				<button class="btn-hamburger toggle-button js-slideout-toggle">☰</button>
+				<h2>Menu</h2>
+			</div>
+			<div id="box-logo">
+				<img  class="logo" src="img/strong-logo.jpg" alt="logo">
+				<h1>PRO<span>FITNESS</span></h1>
+			</div>
+			<div class="content-login-cesta">
+				<div class="box-login">
+					<div id="log" class="btn-login">
+						<h2><a href="#">LOGIN</a></h2>
+						<i class="fal fa-plus"></i>
+					</div>
+				</div>
+				<div class="box-cesta">
+					<a href="#" id="cesta" onclick="cesta(document.querySelector('.cart'))" class="btn-cesta">
+						<img src="img/bag.svg" alt="cesta">
+						<div class="caja-display-items cart empty none" role="dialog">
+							<div id="mini-content-items">
+								<div class="bag-items">
+									<p>
+										<span class="qty-item" title="Items en la cesta" >0</span>
+										<span class="text">Articulo/s en la cesta</span>
+									</p>
+									<p onclick="cerrarcesta(document.querySelector('.cart'))" class="btn-close" title="cerrar" ><i class="fal iclose fa-plus"></i></p>
+								</div>
+								<div class="info-content-items">
+									<p>No tienes articulos en tu cesta de la compra.</p>
+								</div>	
+							</div>	
+						</div>
+					</a>
+					<h3 class="ctn-articulo">0</h3>
+				</div>
+			</div>
+		</section>
+   		<section id="clientenuevo">
+			<h2>Nueva cuenta</h2>
+			<p>Crea tu cuenta de PROFITNESS</p>
+			<button class="btn-cuenta">Crear una cuenta</button>
+			<div class="contenedor-formulario">
+			<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
+				<section class="info-personal">
+					<h3>Informacion Personal</h3>
+					<ul>
+						<li  class="in-name">
+							<label for="nombre">Nombre:<span>*</span></label>
+							<input type="text"  name="nom" onfocus="borrarRevision(this)"  onBlur="validarNombre(this)" id="nombre" value="" >
+							<span class="errornom campo"></span>
+						</li>
+						<li class="in-lastname">
+							<label for="apellido">Apellidos:<span>*</span></label>
+							<input type="text"  name="lastname"  onBlur="validarApellido(this)" id="apellido" value="">
+							<span class="errorlast campo"></span>
 
-					</li>
-					<li class="year">
-						<label for="años">Edad:<span>*</span></label>
-						<input type="date"  onBlur="validarEdad(this)" name="edad" id="años" required>
-						<span class="erroredad"></span>
-					</li>
-					<li class="sex">
-						<label for="men">Hombre:</label>
-						<input type="radio" name="sexo" id="men" value="H">
-						<label for="woman">Mujer:</label>
-						<input type="radio" name="sexo" id="woman" value="M">
-					</li>
-				</ul>	
-			</section>
-			<section class="info-credencial">
-				<h3>Informacion Cuenta</h3>
-				<ul>
-					<li class="mail">
-						<label for="email">Direccion Email:<span>*</span></label>
-						<input type="text" class="inLow" onBlur="validarEmail(this)" name="mail" id="email" value="" required>
-						<span class="errormail"></span>
-					</li>
-					<li class="pass">
-						<label for="pass">Password<span>*</span></label>
-						<input type="password" name="pass" onkeyup="validarPass(this)"  id="pass" value="" required>
-						<span class="errorpass"></span>
-						<span class="errorpass"></span>
-						<span class="errorpass"></span>
-						<span class="errorpass"></span>
-					</li>
-					<li class="repass">
-						<label for="pass">Confirmar password:<span>*</span></label>
-						<input type="password" name="repass" onBlur="repPass(this)" disabled id="repass" value="" required>
-						<span class="errorpass"></span>
-					</li>
-					<li>
-						<input type="checkbox" onclick="comprobarCheck(this)" name="privacidad" id="privacidad" value="" />
-						<p>Acepta terminos y <a href="#">condiciones</a></p>
-						<span class="errorcheck"></span>
-					</li>
-				</ul>
-			</section>
-			<button type="submit" name="cuenta">Crear cuenta</button>
-    	</form>
-      	</div>
-      </section>
-      <section id="separador">
-      	<h2>PRO<span>FITNESS</span></h2>
-      </section>
-      <section id="cliente">
+						</li>
+						<li class="year">
+							<label for="años">Edad:<span>*</span></label>
+							<input type="date"  onBlur="validarEdad(this)" name="edad" id="años" >
+							<span class="erroredad campo"></span>
+						</li>
+						<li class="sex">
+							<label for="men">Hombre:</label>
+							<input type="radio" name="sexo" id="men" value="H">
+							<label for="woman">Mujer:</label>
+							<input type="radio" name="sexo" id="woman" value="M">
+						</li>
+					</ul>	
+				</section>
+				<section class="info-credencial">
+					<h3>Informacion Cuenta</h3>
+					<ul>
+						<li class="mail">
+							<label for="email">Direccion Email:<span>*</span></label>
+							<input type="text" class="inLow" onBlur="validarEmail(this)" name="mail" id="email" value="" >
+							<span class="errormail campo"></span>
+						</li>
+						<li class="pass">
+							<label for="pass">Password<span>*</span></label>
+							<input type="password" name="pass" onkeyup="validarPass(this)"  id="pass" value="" >
+							<span class="errorpass campo"></span>
+							<span class="errorpass"></span>
+							<span class="errorpass"></span>
+							<span class="errorpass"></span>
+						</li>
+						<li class="repass">
+							<label for="pass">Confirmar password:<span>*</span></label>
+							<input type="password" name="repass" onBlur="repPass(this)" disabled id="repass" value="" >
+							<span class="errorpass campo"></span>
+						</li>
+						<li>
+							<input type="checkbox" onclick="comprobarCheck(this)" name="privacidad" id="privacidad" value="" />
+							<p>He leido los terminos y <a href="#">condiciones</a></p>
+							<span class="errorcheck campo"></span>
+						</li>
+					</ul>
+				</section>
+				<button type="submit" name="cuenta">Crear cuenta</button>
+    		</form>
+      		</div>
+    	</section>
+		<section id="separador">
+			<h2> 
+				<p>PRO</p>	
+				<p>FIT<p>
+				<p>NESS</p>
+			</h2>
+		</section>
+    	<section id="cliente">
 		  <form action="login.php" method="post">
 				<ul>
 				  <li class="mail">
@@ -128,13 +157,25 @@
 				<button type="submit"  name="signin">Entrar</button>
 				<a href="#">Has olvidado la contraseña?</a>
 		  </form>
-      </section>
+     	</section>
     </main>
 	<footer id="info-foot "class="panel-footer">
 	</footer>
 	
 	 <script src="js/slideout-1.0.1/slidetoogle.js" type="text/javascript"></script>
 	 <script>
+
+
+//cesta items
+
+		function cesta(cart){
+			cart.classList.remove("none");
+			cart.classList.toggle("showform");
+		}
+
+		function cerrarcesta(btnclose){
+			btnclose.classList.add("none");
+		}
 
 		 //boton cuenta
 		  var btncuenta = document.getElementsByClassName("btn-cuenta")[0];
@@ -160,13 +201,14 @@
 		 function validarNombre(input){
 			 if(input != undefined){
 			   var exp =/^[a-z\d_]{4,15}$/i;
-			   var msg1 = input.parentElement.querySelectorAll("span")[1];
+			   var msg = input.parentElement.querySelectorAll("span")[1];
 				   if(input.name == "nom"){
 					   if(exp.test(input.value) == false){
-						   msg1.innerHTML = "Minimo 3 letras";
-						   return false;
+							msg.classList.add("invalid");
+						    msg.innerHTML = "Minimo 3 letras";
 					   }else{
-						   msg1.innerHTML = "correcto";
+							msg.style.display = "none";
+							msg.innerHTML = "";
 					   }
 				   }
 			   }		
@@ -175,13 +217,14 @@
 	   function validarApellido(input)	{
 		   if(input != undefined){
 			   var exp =/^[a-z\d_]{6,49}$/i;
-			   var msg2 = input.parentElement.querySelectorAll("span")[1];
+			   var msg = input.parentElement.querySelectorAll("span")[1];
 			   if(input.name == "lastname"){
 				   if(exp.test(input.value) == false){
-					   msg2.innerHTML = "Escribe el apellido completo";
-					   return false;
+						msg.classList.add("invalid");
+					    msg.innerHTML = "Escribe el apellido completo";
 				   }else{
-					   msg2.innerHTML = "correcto";
+						msg.style.display = "none";
+					    msg.innerHTML = "";
 				   }
 			   }
 		   }
@@ -190,14 +233,14 @@
 	   //validar edad
 	   function validarEdad(input){		
 			   if(input != undefined){
-				   debugger;
-				   var msg3 = input.parentElement.querySelectorAll("span")[1];
+				   var msg = input.parentElement.querySelectorAll("span")[1];
 				   if(input.name == "edad"){
 					   if(input.value == ""){
-						   msg3.innerHTML = "Indica tu edad";
-						   return false;
+							msg.classList.add("invalid");
+							msg.innerHTML = "Indica tu edad";
 					   }else{
-						   msg3.innerHTML = "correcto";
+							msg.style.display = "none";
+							msg.innerHTML = "";
 					   }
 				   }
 			   }
@@ -207,11 +250,11 @@
 	   function comprobarCheck(input) {
 			var msg =  input.parentElement.querySelector("span");
 				if(input.checked == true){
+					msg.style.display = "none";
 					msg.innerHTML = "";
 				}else{
-					msg.style.color = "tomato";
+					msg.classList.add("invalid");
 					msg.innerHTML = "Acepta las condiciones para continuar";
-					return false;
 				}
 		}	
 
@@ -221,11 +264,12 @@
 		   var msg = input.parentElement.querySelectorAll("span")[1]; 
 		   if(input.name == "mail"){
 			   if(expr.test(input.value) ==  false){
-				   msg.innerHTML = "Introduce un email valido";
+					msg.classList.add("invalid");
+				    msg.innerHTML = "El email no es valido";
 				   //se ha introducido mal el mail
-				   return false;
 			   }else{
-				   msg.innerHTML ="";
+					msg.style.display = "none";
+				    msg.innerHTML ="";
 			   }
 		   }
 		   //es correcto
@@ -240,28 +284,26 @@
 		   var exp = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
 		   var msg = inputpass.parentElement.querySelectorAll("span")[1];
 			   if(exp.test(inputpass.value) ==  false){
-					msg.style.color = "tomato";
-				   msg.innerHTML = "Password invalido";
+					msg.classList.add("invalid");
+				    msg.innerHTML = "Password invalido";
 				   //se ha introducido mal el pass
-				   return false;
 			   }else{
-					msg.style.color = "#4CAF50";
-				   msg.innerHTML ="Valido";
-				   enablepass.disabled= false;	
+					msg.classList.add("valid");
+				    msg.innerHTML ="Valido";
+				    enablepass.disabled= false;	
 					return inputpass.value;
 			   }
 	   }
 
 	   //repetir password
 	   function repPass(passrep){
-		   debugger;
 		   var pasvalid = inputpass.onblur();//contraseña usuario
 		   var msg = passrep.parentElement.querySelectorAll("span")[1];
 		   if(pasvalid === passrep.value){
-				msg.style.color = "#4CAF50";
+				msg.classList.add("valid");
 				msg.innerHTML = "Coincide";
 		   }else{
-				msg.style.color = "tomato";
+				msg.classList.add("invalid");
 				msg.innerHTML = "Password no coincide";
 		   }
 	   }
@@ -274,42 +316,53 @@
 		   var msgnum = input.parentElement.querySelectorAll("span")[3];
 		   var msglett = input.parentElement.querySelectorAll("span")[4];
 			   // validad minuscula
+			   debugger;
+
 			   var lowLetter = /[a-z]/;
 			   if(lowLetter.test(input.value)){
-					msgmin.style.color = "tomato";
 					msgmin.innerHTML = "";
 			   }else{
+					msg.classList.add("invalid");
 					msgmin.innerHTML = "Incluye minusculas";
 
 			   }
 			   // validad mayuscula
 			   var upperLetter = /[A-Z]/;
 			   if(upperLetter.test(input.value)){
-					msgmay.style.color = "tomato";
 					msgmay.innerHTML = "";
 			   }else{
+					msg.classList.add("invalid");
 					msgmay.innerHTML = "Incluye  mayusculas";
 			   }
 			   //validar numero
-			   var number = /[0-9]\d/;
+			var number = /[0-9]\d/;
 			   console.log(number.test(input.value));
-			   if(number.test(input.value) > true){
+			   if(number.test(input.value) == true){
 				
 					msgnum.innerHTML = "";
 			   }else{
-				msgnum.style.color = "tomato";
-					msgnum.innerHTML = "Incluye algun numero";
+					msg.classList.add("invalid");
+					msgnum.innerHTML = "Minimo 2 numeros";
 			   }
 			   // validar longitud
 			   if(input.value.length >= 6 && input.value.length <= 15) {
 					msglett.innerHTML = "";
 			   }else{
-					msglett.style.color ='tomato';
+					msg.classList.add("invalid");
 					msglett.innerHTML = "Entre 6 y 15 caracteres";
 			   }
 	
 	   	}
 		 
+
+		   
+		   //borrar error  preventdefault
+			   function borrarRevision(input){
+					var msg = input.parentElement.querySelectorAll("span")[1];
+					msg.innerHTML = "";
+			   }
+
+
 			 //funcion validar  campos del formulario
 		   	function validaSubmit(ev) {
 				var expemail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
@@ -321,32 +374,42 @@
 				var edad = document.getElementById("años");
 				var check = document.getElementById("privacidad");
 				var lastname = document.getElementById("apellido");
+				var err = document.querySelectorAll(".campo");
 
-				if(mail.value.length == 0 || !expemail.test(mail.value) || expemail.test(mail.value)){ //si esta vacio y no es una expr regular
-					alert("Revisa campo email.");
+
+			
+				for(var i = 0; i < err.length; i++){
+				if(mail.value.length == 0 || !expemail.test(mail.value) ){ //si esta vacio y no es una expr regular
+					err[i].classList.add("invalid");
+					err[i].innerHTML ="Revisa campo email para continuar.";
 					ev.preventDefault(); // desabilita el submit y no envia el formulario
-				}else if(pass.value.length == 0 || !exppass.test(pass.value) || exppass.test(pass.value)){ //si esta vacio y no es una expr regular
-					alert("Revisa campo password.");
+				}else if(pass.value.length == 0 || !exppass.test(pass.value) ){ //si esta vacio y no es una expr regular
+					err[i].classList.add("invalid");
+					err[i].innerHTML = "Revisa campo password para continuar.";
 					ev.preventDefault(); // desabilita el submit y no envia el formulario
-				}else if(repas.value.length == 0 || !exppass.test(repas.value) || exppass.test(repas.value)){
-					alert("Revisa repeticion de password");
+				}else if(repas.value.length == 0 || !exppass.test(repas.value)){
+					err.classList.add("invalid");
+					err[i].innerHTML = "Revisa repeticion de password para continuar.";
 					ev.preventDefault(); // desabilita el submit y no envia el formulario
-				}else if(name.value.length  < 3 || name.value.length > 15 ){
-					alert("Revisa campo nombre 16 caracteres max.");
+				}else if(name.value.length == 0 || name.value.length  < 3 || name.value.length > 15 ){
+					err.classList.add("invalid");
+					err[i].innerHTML = "Revisa campo nombre 16 caracteres max.";
 					ev.preventDefault();
-				}else if(lastname.value.length < 5 ||  lastname.value.length > 50 ){
-					alert("Revisa campo apellido 50 caracteres max.");
+				}else if(lastname.value.length == 0 || lastname.value.length < 5 ||  lastname.value.length > 50 ){
+					err.classList.add("invalid");
+					err[i].innerHTML = "Revisa campo apellido 50 caracteres max.";
 					ev.preventDefault();
 				}else if(edad.value == ""){
-					alert("revisa campo edad");
+					err.classList.add("invalid");
+					err[i].innerHTML = "Revisa campo edad para continuar.";
 					ev.preventDefault();
 				}else if(check.checked == false){
-					alert("Acepta los terminos y condiciones");
+					err.classList.add("invalid");
+					err[i].innerHTML = "Acepta los terminos y condiciones.";
 					ev.preventDefault();
+				}
 				}	
-			}
-		   
-	   
+			}   
 </script>
 </body>
 </html>
