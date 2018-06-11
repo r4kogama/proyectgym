@@ -45,7 +45,6 @@ body{
     font-style: normal;
 }
 
-
 a{
     text-decoration: none;
     color: black;
@@ -59,48 +58,30 @@ a{
     display: block;
 }
 
+.w-33{
+    width: 33%;
+}
+
+
+.f_96{
+    font-size: 0.8;
+}
+.f-24{
+    font-size: 2em;
+}
+
+.f-18{
+   font-size: 1.5em; 
+}
+
+.f-30{
+    font: 2.5em;
+}
 /************** HEADER **************
 *************************************/
 
 
-#header{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 20px 20px 10px 20px;
-}
 
-.formreg{
-    display: none;
-}
-
-.box-login{
-    width: 44px;
-    padding-right: 11px;
-}
-
-#box-logo{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: row-reverse;
-    /* flex-direction: column; */
-    /* justify-content: space-around; */
-    align-items: center;
-    color: white;
-}
-
-.logo{
-    width: 170px;
-}
-
-.content-login-cesta{
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-}
 
 /*****CESTA******/
 
@@ -185,11 +166,11 @@ a{
 *******ITEMS CESTA **********/
 .caja-display-items{
     position: absolute;
-    top: 67px;
-    right: 53px;
+    top: 115px;
+    right: 25px;
     width: 366px;
     border-radius: 4px;
-    background:  rgb(221, 212, 187);
+    background: rgb(221, 212, 187);
     padding: 35px 0px;
 }
 #mini-content-items{
@@ -219,6 +200,7 @@ a{
 
 .iclose{
     padding-left: 5px;
+    transform: rotate(-46deg);
 }
 
 /**********
@@ -258,3 +240,88 @@ valid{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+/************************************************
+************ ***********MAIN ******************************
+***********************************************/
+
+
+/*****************section header *****************/
+
+h1{
+    color: black;
+}
+#header{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px 0px 12px 0px;
+}
+
+
+
+.formreg{
+    display: none;
+}
+
+.box-login{
+    width: 44px;
+    padding-right: 11px;
+}
+
+.box-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    color: white;
+    border: 1px solid black;
+}
+
+.box-logo img{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 170px;
+}
+
+.content-login-cesta{
+    max-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    border: 1px solid black;
+}
+.box-bur{
+    border: 1px solid black;
+}
+
+/*****registro y login**
+***************************/
+
+#content-log-registro{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.clientereg{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.titulo-centro {
+    display: flex;
+    justify-content: center;
+}
+
+.text-left{
+    text-align: left;
+}
+.user-log{
+    
+}

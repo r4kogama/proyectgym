@@ -8,7 +8,8 @@
 	<link rel="icon" href="img/" type="image/png" sizes="16x16">
 	 <!-- CSS-->
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
-	<link href="css/fontawesome.min.css" rel="stylesheet" type="text/css" >
+	<!--<link href="css/fontawesome-all.css" rel="stylesheet" type="text/css" >-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link href="css/index.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<!-- JS-->
@@ -30,134 +31,138 @@
 	</header>
     <main id="main" class="panel panel-header principal">
 		<section id="header">
-			<div class="box-bur">
+			<div class="box-bur w-33">
 				<button class="btn-hamburger toggle-button js-slideout-toggle">☰</button>
 				<h2>Menu</h2>
 			</div>
-			<div id="box-logo">
+			<div id="logo" class="w-33 box-logo">
 				<img  class="logo" src="img/strong-logo.jpg" alt="logo">
 				<h1>PRO<span>FITNESS</span></h1>
 			</div>
-			<div class="content-login-cesta">
+			<div class="content-login-cesta w-33">
 				<div class="box-login">
 					<div id="log" class="btn-login">
 						<h2><a href="#">LOGIN</a></h2>
-						<i class="fal fa-plus"></i>
 					</div>
 				</div>
 				<div class="box-cesta">
 					<a href="#" id="cesta" onclick="cesta(document.querySelector('.cart'))" class="btn-cesta">
 						<img src="img/bag.svg" alt="cesta">
-						<div class="caja-display-items cart empty none" role="dialog">
+						
+					</a>
+					<div class="caja-display-items cart empty none" role="dialog">
 							<div id="mini-content-items">
 								<div class="bag-items">
 									<p>
 										<span class="qty-item" title="Items en la cesta" >0</span>
 										<span class="text">Articulo/s en la cesta</span>
 									</p>
-									<p onclick="cerrarcesta(document.querySelector('.cart'))" class="btn-close" title="cerrar" ><i class="fal iclose fa-plus"></i></p>
+									<p class="btn-close" title="cerrar" ><i onclick="cerrarcesta(document.querySelector('.cart'))" class="fas iclose fa-plus"></i></p>
 								</div>
 								<div class="info-content-items">
 									<p>No tienes articulos en tu cesta de la compra.</p>
 								</div>	
 							</div>	
 						</div>
-					</a>
 					<h3 class="ctn-articulo">0</h3>
 				</div>
 			</div>
 		</section>
-   		<section id="clientenuevo">
-			<h2>Nueva cuenta</h2>
-			<p>Crea tu cuenta de PROFITNESS</p>
-			<button class="btn-cuenta">Crear una cuenta</button>
-			<div class="contenedor-formulario">
-			<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
-				<section class="info-personal">
-					<h3>Informacion Personal</h3>
-					<ul>
-						<li  class="in-name">
-							<label for="nombre">Nombre:<span>*</span></label>
-							<input type="text"  name="nom" onfocus="borrarRevision(this)"  onBlur="validarNombre(this)" id="nombre" value="" >
-							<span class="errornom campo"></span>
-						</li>
-						<li class="in-lastname">
-							<label for="apellido">Apellidos:<span>*</span></label>
-							<input type="text"  name="lastname"  onBlur="validarApellido(this)" id="apellido" value="">
-							<span class="errorlast campo"></span>
+		<section id="content-log-registro">
+			<section id="clientenuevo" class="w-33 clientereg">
+				<div class="text-left">
+					<h2>Nueva cuenta</h2>
+					<p>Crea tu cuenta de PROFITNESS</p>
+					<button class="btn-cuenta">Crear una cuenta</button>
+					<div class="contenedor-formulario">
+						<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
+							<section class="info-personal">
+								<h3>Informacion Personal</h3>
+								<ul>
+									<li  class="in-name">
+										<label for="nombre">Nombre:<span>*</span></label>
+										<input type="text"  name="nom" onfocus="borrarRevision(this)"  onBlur="validarNombre(this)" id="nombre" value="" >
+										<span class="errornom campo"></span>
+									</li>
+									<li class="in-lastname">
+										<label for="apellido">Apellidos:<span>*</span></label>
+										<input type="text"  name="lastname"  onBlur="validarApellido(this)" id="apellido" value="">
+										<span class="errorlast campo"></span>
 
-						</li>
-						<li class="year">
-							<label for="años">Edad:<span>*</span></label>
-							<input type="date"  onBlur="validarEdad(this)" name="edad" id="años" >
-							<span class="erroredad campo"></span>
-						</li>
-						<li class="sex">
-							<label for="men">Hombre:</label>
-							<input type="radio" name="sexo" id="men" value="H">
-							<label for="woman">Mujer:</label>
-							<input type="radio" name="sexo" id="woman" value="M">
-						</li>
-					</ul>	
-				</section>
-				<section class="info-credencial">
-					<h3>Informacion Cuenta</h3>
-					<ul>
+									</li>
+									<li class="year">
+										<label for="años">Edad:<span>*</span></label>
+										<input type="date"  onBlur="validarEdad(this)" name="edad" id="años" >
+										<span class="erroredad campo"></span>
+									</li>
+									<li class="sex">
+										<label for="men">Hombre:</label>
+										<input type="radio" name="sexo" id="men" value="H">
+										<label for="woman">Mujer:</label>
+										<input type="radio" name="sexo" id="woman" value="M">
+									</li>
+								</ul>	
+							</section>
+							<section class="info-credencial">
+								<h3>Informacion Cuenta</h3>
+								<ul>
+									<li class="mail">
+										<label for="email">Direccion Email:<span>*</span></label>
+										<input type="text" class="inLow" onBlur="validarEmail(this)" name="mail" id="email" value="" >
+										<span class="errormail campo"></span>
+									</li>
+									<li class="pass">
+										<label for="pass">Password<span>*</span></label>
+										<input type="password" name="pass" onkeyup="validarPass(this)"  id="pass" value="" >
+										<span class="errorpass campo"></span>
+										<span class="errorpass"></span>
+										<span class="errorpass"></span>
+										<span class="errorpass"></span>
+									</li>
+									<li class="repass">
+										<label for="pass">Confirmar password:<span>*</span></label>
+										<input type="password" name="repass" onBlur="repPass(this)" disabled id="repass" value="" >
+										<span class="errorpass campo"></span>
+									</li>
+									<li>
+										<input type="checkbox" onclick="comprobarCheck(this)" name="privacidad" id="privacidad" value="" />
+										<p>He leido los terminos y <a href="#">condiciones</a></p>
+										<span class="errorcheck campo"></span>
+									</li>
+								</ul>
+							</section>
+							<button type="submit" name="cuenta">Crear cuenta</button>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section id="separador" class="w-33 titulo-centro">
+				<h2> 
+					<p>PRO</p>	
+					<p>FIT<p>
+					<p>NESS</p>
+				</h2>
+			</section>
+			<section id="cliente" class="w-33 user-log">
+				<form action="login.php" method="post">
+						<ul>
 						<li class="mail">
-							<label for="email">Direccion Email:<span>*</span></label>
-							<input type="text" class="inLow" onBlur="validarEmail(this)" name="mail" id="email" value="" >
-							<span class="errormail campo"></span>
+								<label for="email">Direccion Email:<span>*</span></label>
+								<input type="email" class="inLow" name="email" id="email-log" onBlur="validarEmail(this)" value="">
+								<span class="errormail"></span></li>
+						<li class="pass"><label for="pass">Password<span>*</span></label>
+								<input type="password" name="plog" id="pass-log" onkeyup="validarPass(this)" value="">
+								<span class="errorpass1 errorpass2"></span>
 						</li>
-						<li class="pass">
-							<label for="pass">Password<span>*</span></label>
-							<input type="password" name="pass" onkeyup="validarPass(this)"  id="pass" value="" >
-							<span class="errorpass campo"></span>
-							<span class="errorpass"></span>
-							<span class="errorpass"></span>
-							<span class="errorpass"></span>
-						</li>
-						<li class="repass">
-							<label for="pass">Confirmar password:<span>*</span></label>
-							<input type="password" name="repass" onBlur="repPass(this)" disabled id="repass" value="" >
-							<span class="errorpass campo"></span>
-						</li>
-						<li>
-							<input type="checkbox" onclick="comprobarCheck(this)" name="privacidad" id="privacidad" value="" />
-							<p>He leido los terminos y <a href="#">condiciones</a></p>
-							<span class="errorcheck campo"></span>
-						</li>
-					</ul>
-				</section>
-				<button type="submit" name="cuenta">Crear cuenta</button>
-    		</form>
-      		</div>
-    	</section>
-		<section id="separador">
-			<h2> 
-				<p>PRO</p>	
-				<p>FIT<p>
-				<p>NESS</p>
-			</h2>
+						</ul>
+						<div class="remember">
+							<input type="checkbox" id="checkregistro" name="recordar" >Recuerdame
+						</div>	
+						<button type="submit"  name="signin">Entrar</button>
+						<a href="#">Has olvidado la contraseña?</a>
+				</form>
+			</section>
 		</section>
-    	<section id="cliente">
-		  <form action="login.php" method="post">
-				<ul>
-				  <li class="mail">
-						<label for="email">Direccion Email:<span>*</span></label>
-						<input type="email" class="inLow" name="email" id="email-log" onBlur="validarEmail(this)" value="">
-						<span class="errormail"></span></li>
-				  <li class="pass"><label for="pass">Password<span>*</span></label>
-						<input type="password" name="plog" id="pass-log" onkeyup="validarPass(this)" value="">
-						<span class="errorpass1 errorpass2"></span>
-				  </li>
-				</ul>
-				<div class="remember">
-					<input type="checkbox" id="checkregistro" name="recordar" >Recuerdame
-				</div>	
-				<button type="submit"  name="signin">Entrar</button>
-				<a href="#">Has olvidado la contraseña?</a>
-		  </form>
-     	</section>
     </main>
 	<footer id="info-foot "class="panel-footer">
 	</footer>
@@ -170,11 +175,13 @@
 
 		function cesta(cart){
 			cart.classList.remove("none");
-			cart.classList.toggle("showform");
+			cart.classList.add("showform");
 		}
 
 		function cerrarcesta(btnclose){
+			btnclose.classList.remove("showform");
 			btnclose.classList.add("none");
+		
 		}
 
 		 //boton cuenta
