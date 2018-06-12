@@ -69,17 +69,19 @@
 			</div>
 		</section>
 		<section id="content-log-registro">
-			<section id="clientenuevo" class="w-33 clientereg">
+			<section id="clientenuevo" class="clientereg">
 				<div class="text-left">
-					<h2>Nueva cuenta</h2>
-					<p>Crea tu cuenta de PROFITNESS</p>
-					<button class="btn-cuenta">Crear una cuenta</button>
+					<h2 class="f-24 newcuenta ">Nueva cuenta</h2>
+					<p>Crea tu cuenta PROFITNESS con ello podrás disfrutar de nuestro catalogo de productos, apuntarte a nuestas clases, ver y rastrear tus pedidos en tu cuenta y mucho más.</p>
+					<div>
+						<span class="btn"><button class="btn-cuenta f-15  relleno ">Crear una cuenta</button></span>
+					</div>
 					<div class="contenedor-formulario">
 						<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
 							<section class="info-personal">
 								<h3>Informacion Personal</h3>
 								<ul>
-									<li  class="in-name">
+									<li class="in-name">
 										<label for="nombre">Nombre:<span>*</span></label>
 										<input type="text"  name="nom" onfocus="borrarRevision(this)"  onBlur="validarNombre(this)" id="nombre" value="" >
 										<span class="errornom campo"></span>
@@ -136,14 +138,14 @@
 					</div>
 				</div>
 			</section>
-			<section id="separador" class="w-33 titulo-centro">
+			<section id="separador" class="titulo-centro">
 				<h2> 
 					<p>PRO</p>	
 					<p>FIT<p>
 					<p>NESS</p>
 				</h2>
 			</section>
-			<section id="cliente" class="w-33 user-log">
+			<section id="cliente" class="user-log">
 				<form action="login.php" method="post">
 						<ul>
 						<li class="mail">
@@ -165,6 +167,61 @@
 		</section>
     </main>
 	<footer id="info-foot "class="panel-footer">
+		<section class="containt-footer-principal">
+			<section id="content-media">
+				<div class="box-logo">
+					<img  class="logo" src="img/strong-logo.jpg" alt="logo">
+					<h1>PRO<span>FITNESS</span></h1>
+				</div>
+				<ul>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</section>
+			<section id="location">
+				<ul>
+					<li></li>
+					<li>Calle Alguna de barcelona, 63</li>
+					<li>08092 Barcelona</li>
+					<li>Catalunta (Espanya)</li>
+					<li><a href="mailto:info@profitnes.com">info@profitnes.com</a></li>
+					<li>+34534434434</li>	
+				</ul>
+			</section>
+			<section id="dedicacion">
+				<h4>Quienes somos?</h4>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+					Rerum dolorum sequi, earum ullam aspernatur 
+					dolorem eaque officiis commodi consectetur sunt 
+					molestiae natus expedita illo distinctio officia! 
+					 id.</p>
+			</section>
+			<section id="menu-footer">
+				<ul>
+					<li><a href="#">Home </a></li>
+					<li><a href="#">Productos </a></li>
+					<li><a href="#">Registrar/login</a></li>
+					<li><a href="#">Envios & Devoluciones</a></li>
+					<li><a href="#">Contacto</a></li>
+					<li><a href="#">Site Map</a></li>
+				</ul>
+			</section>
+		</section>
+		<section id="copy">
+			<div>
+				<p>© ProFitNes Copyright 2018. All rights reserved.
+					<span>|</span>
+					<a href="#">Terms of Use</a>
+					<span>|</span>
+					<a href="#">Privacy Policy</a>
+					<span>|</span>
+					<a href="#">Cookie Policy</a>
+				</p>
+				<p>Created by Raul</p>
+			</div>
+		</section>
 	</footer>
 	
 	 <script src="js/slideout-1.0.1/slidetoogle.js" type="text/javascript"></script>
@@ -181,7 +238,6 @@
 		function cerrarcesta(btnclose){
 			btnclose.classList.remove("showform");
 			btnclose.classList.add("none");
-		
 		}
 
 		 //boton cuenta

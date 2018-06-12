@@ -75,8 +75,14 @@ a{
 }
 
 .f-30{
-    font: 2.5em;
+    font-size: 2.5em;
 }
+
+.f-15{
+    font-size: 1.25em;
+}
+
+
 /************** HEADER **************
 *************************************/
 
@@ -201,6 +207,7 @@ a{
 .iclose{
     padding-left: 5px;
     transform: rotate(-46deg);
+    cursor: pointer;
 }
 
 /**********
@@ -208,7 +215,7 @@ a{
 ************/
 
 .showform{
-    display: block;
+    display: block!important;
     animation: mostrar-slide .45s ease-in-out;
     -moz-animation: mostrar-slide .45s ease-in-out;
 }
@@ -305,6 +312,8 @@ h1{
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+    min-height: 100vh;
+    padding-top: 80px;
 }
 
 
@@ -312,16 +321,137 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    border: 1px solid;
+    width: 40%;
+    padding-left: 130px;
 }
 
 .titulo-centro {
     display: flex;
     justify-content: center;
+    border: 1px solid;
+    width: 15%;
 }
 
 .text-left{
     text-align: left;
 }
+
 .user-log{
-    
+    border: 1px solid;
+    width: 40%;
+    padding-left: 30px;
+}
+
+.newcuenta{
+    padding: 20px;
+    font-weight: 700;
+    font-stretch: expanded;
+    text-transform: uppercase;
+}
+ 
+.text-left p{
+    padding: 20px;
+    line-height: 2em;
+}
+.text-left div:first-of-type{
+    padding-left: 50px;
+}
+
+.btn-cuenta{
+    padding: 20px;
+    font-weight: 700;
+}
+
+/**********************************
+************ Animacion Botones*****
+***********************************/
+.btn, .relleno{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+    border: 0px;
+    background: transparent;
+}
+.btn:after{
+    content: "";
+    width: 100%;
+    padding: 0px;
+    position: absolute;
+    left: 0;
+    transform: translate(0px,-20px);
+    height: 0%;
+    opacity: 0;
+    transition: all 250ms ease;
+    outline: 1px solid black;
+    overflow: hidden;
+
+}
+.btn:hover:after{
+    content:"";
+    transform: translate(1px,-1px);
+    width: 99%;
+    height: 0%;
+    opacity:1;
+    transition: all 250ms ease;
+    outline: 1px solid black;
+}
+.btn:hover:before{
+    content:"";
+    width: 98.5%;
+    transform: translate(-1px,56px);
+    height: 0%;
+    opacity:1;
+    transition: all 250ms ease;
+    outline: 1px solid black;
+}
+.btn:before{
+    content: "";
+    width: 100%;
+    padding: 0px;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transform: translate(0px,75px);
+    height: 0%;
+    transition: all 250ms ease;
+    outline: 1px solid black;
+    overflow: hidden;
+
+}
+.relleno{
+    color: #000;
+    letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 400ms cubic-bezier(.35,.04,.49,1.03) 300ms;
+}
+.relleno:after{
+    content:"";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 2px;
+    left: 0;
+    right: 0;
+    display: block;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    z-index: -1;
+    transition: transform 400ms cubic-bezier(.35,.04,.49,1.03) 200ms;
+}
+
+.relleno:hover:after {    /**posicion inicial**/
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.relleno:hover, .btn:hover {
+    color: white;
+    transition: 280ms;
 }
