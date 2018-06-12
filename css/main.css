@@ -16,7 +16,13 @@
 /****************************
  ***********BODY************* 
  ***************************/
-
+#body-login{
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(19,19,19,1) 53%, rgba(17,17,17,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(19,19,19,1) 53%, rgba(17,17,17,1) 100%);
+    background: linear-gradient(180deg, rgb(41, 41, 41) 0%, rgb(18, 18, 18) 15%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#111111",GradientType=1);
+}
 
  *{
     box-sizing: border-box;
@@ -38,6 +44,12 @@ body{
     min-width: 360px;
 }
 
+.main-login{
+    background: url(../img/battleropesguy-1440x662.jpg);
+    background-repeat: no-repeat;
+    background-position: 0vw 57vh;
+}
+
 @font-face {
     font-family: 'FlamaRegular';
     src: url('../fonts/FlamaBookRegular.otf');
@@ -45,42 +57,48 @@ body{
     font-style: normal;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
+a{text-decoration: none;color: white;}
 
-.none{
-    display: none;
-}
+.none{display: none;}
+.block{display: block;}
+.in-block{display: inline-block;}
 
-.block{
+.w-75{ width: 75%;}
+.w-50{width: 50%;}
+.w-25{width: 25%;}
+.w-33{width: 33%;}
+
+.h-30vh{ height: 30vh;}
+.h-40vh{ height: 40vh;}
+
+.f-36{font-size: 3em;}
+.f-30{font-size: 2.5em;}
+.f-24{font-size: 2em;}
+.f-18{font-size: 1.5em; }
+.f-15{font-size: 1.25em;}
+.f_96{font-size: .8em;}
+
+input:focus{
+    background-color: white;
+    color:black;
+}
+.input-style{
     display: block;
+    border-bottom: 1px solid white!important;
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    background: transparent;
+    color:white;
+}
+label{display: block;}
+
+.w{color:white;}
+
+.grey, label{
+    color:rgb(219, 219, 219);
 }
 
-.w-33{
-    width: 33%;
-}
-
-
-.f_96{
-    font-size: 0.8;
-}
-.f-24{
-    font-size: 2em;
-}
-
-.f-18{
-   font-size: 1.5em; 
-}
-
-.f-30{
-    font-size: 2.5em;
-}
-
-.f-15{
-    font-size: 1.25em;
-}
 
 
 /************** HEADER **************
@@ -91,7 +109,6 @@ a{
 
 /*****CESTA******/
 
-
 .ctn-articulo{
     top: 72px;
     right: 58px;
@@ -101,14 +118,15 @@ a{
     width: 24px;
     position: absolute;
     border-radius: 20px;
-    background: #000000;
-    color: white;
+    background: white;
+    color: black;
     font-size: 1.1em;
-    border: 2px solid white;
+    font-weight: 600;
+    border: 2px solid black;
 }
 
 .btn-cesta{
-    background: #ddd4bb;
+    background: linear-gradient(to right, #2234ab, rgba(31,38,103,0.9));
     height: 0px;
     width: 40px;
     padding: 24px;
@@ -149,8 +167,8 @@ a{
     top: -12px;
     padding: 7px;
     border-radius: 26px;
-    background: #ddd4bb;
-    transition: all 300ms ease-out;
+    background:linear-gradient(to right, #21319f, rgb(31, 39, 109));
+    transition: all 800ms ease-out;
     content: "";
    /* -ms-transform: translate(60px,100px); 
     -webkit-transform: translate(50px,100px); 
@@ -158,13 +176,16 @@ a{
 }
 
 .btn-cesta:hover{
-    background: #000000;
-    transition: all 300ms ease-in;
+  transition: all 100ms ease-out;
+  background: whitesmoke; 
+
 }
 
 .btn-cesta:hover:after{
-    background: #000000;
-    transition: all 300ms ease-in;
+    background: whitesmoke;
+    transition: all 660ms ease;
+    transform: translateY(25px);
+
 }
 
 
@@ -176,7 +197,7 @@ a{
     right: 25px;
     width: 366px;
     border-radius: 4px;
-    background: rgb(221, 212, 187);
+    background:linear-gradient(to right, #21319f, rgb(31, 39, 109));
     padding: 35px 0px;
 }
 #mini-content-items{
@@ -219,7 +240,6 @@ a{
     animation: mostrar-slide .45s ease-in-out;
     -moz-animation: mostrar-slide .45s ease-in-out;
 }
-
 
 .msgpas{
     color: tomato;
@@ -265,8 +285,6 @@ h1{
     padding: 20px 0px 12px 0px;
 }
 
-
-
 .formreg{
     display: none;
 }
@@ -305,8 +323,12 @@ h1{
     border: 1px solid black;
 }
 
-/*****registro y login**
-***************************/
+.box-bur h2{
+    display: inline-block;
+}
+
+/*********** REGISTRO y LOGIN ************
+***************************************/
 
 #content-log-registro{
     display: flex;
@@ -320,27 +342,10 @@ h1{
 .clientereg{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
     border: 1px solid;
     width: 40%;
     padding-left: 130px;
-}
-
-.titulo-centro {
-    display: flex;
-    justify-content: center;
-    border: 1px solid;
-    width: 15%;
-}
-
-.text-left{
-    text-align: left;
-}
-
-.user-log{
-    border: 1px solid;
-    width: 40%;
-    padding-left: 30px;
 }
 
 .newcuenta{
@@ -356,12 +361,74 @@ h1{
 }
 .text-left div:first-of-type{
     padding-left: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .btn-cuenta{
     padding: 20px;
     font-weight: 700;
 }
+
+.titulo-centro {
+    display: flex;
+    width: 15%;
+    justify-content: center;
+    border: 1px solid;
+}
+
+.titulo-centro h2{
+
+}
+
+.titulo-centro p{
+    height: 33vh;
+    display: flex;
+    align-items: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+
+/******* LOG **********/
+.formlog{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.formlog ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.log-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.user-log{
+    border: 1px solid;
+    width: 40%;
+    padding-left: 30px;
+    display: flex;
+}
+
+.link-border{
+    margin-top: 19px;
+    padding: 0px 10px 2px 0px;
+    display: flex;
+    width: 156px;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    font-weight: 700;
+    color:white;
+}
+
 
 /**********************************
 ************ Animacion Botones*****
@@ -385,7 +452,7 @@ h1{
     height: 0%;
     opacity: 0;
     transition: all 250ms ease;
-    outline: 1px solid black;
+    outline: 1px solid white;
     overflow: hidden;
 
 }
@@ -396,16 +463,16 @@ h1{
     height: 0%;
     opacity:1;
     transition: all 250ms ease;
-    outline: 1px solid black;
+    outline: 1px solid white;
 }
 .btn:hover:before{
     content:"";
     width: 98.5%;
-    transform: translate(-1px,56px);
+    transform: translate(0px,56px);
     height: 0%;
     opacity:1;
     transition: all 250ms ease;
-    outline: 1px solid black;
+    outline: 1px solid white;
 }
 .btn:before{
     content: "";
@@ -417,22 +484,22 @@ h1{
     transform: translate(0px,75px);
     height: 0%;
     transition: all 250ms ease;
-    outline: 1px solid black;
+    outline: 1px solid white;
     overflow: hidden;
 
 }
 .relleno{
-    color: #000;
+    color:#ffffff;
     letter-spacing: 1px;
     display: inline-block;
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: color 400ms cubic-bezier(.35,.04,.49,1.03) 300ms;
+    transition: color 300ms cubic-bezier(.35,.04,.49,1.03) 300ms;
 }
 .relleno:after{
     content:"";
-    background-color: black;
+    background-color: white;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -443,7 +510,7 @@ h1{
     -webkit-transform: translate3d(-100%,0,0);
     transform: translate3d(-100%,0,0);
     z-index: -1;
-    transition: transform 400ms cubic-bezier(.35,.04,.49,1.03) 200ms;
+    transition: transform 300ms cubic-bezier(.35,.04,.49,1.03) 200ms;
 }
 
 .relleno:hover:after {    /**posicion inicial**/
@@ -452,6 +519,8 @@ h1{
 }
 
 .relleno:hover, .btn:hover {
-    color: white;
-    transition: 280ms;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 480ms;
 }

@@ -8,8 +8,8 @@
 	<link rel="icon" href="img/" type="image/png" sizes="16x16">
 	 <!-- CSS-->
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
-	<!--<link href="css/fontawesome-all.css" rel="stylesheet" type="text/css" >-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="fontawesome/webfonts/fa-solid-900.woff2" rel="stylesheet">
+	<link href="fontawesome/fontawesome-all.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<!-- JS-->
@@ -17,7 +17,7 @@
 	
 	<title>gym</title>
 </head>
-<body>
+<body id="body-login">
 	<header>
 		<nav id="menu" class="menu-oculto">
 			<ul>
@@ -29,9 +29,9 @@
 			</ul>
 		</nav>
 	</header>
-    <main id="main" class="panel panel-header principal">
+    <main id="main" class="panel panel-header principal main-login">
 		<section id="header">
-			<div class="box-bur w-33">
+			<div class="box-bur  w w-33">
 				<button class="btn-hamburger toggle-button js-slideout-toggle">☰</button>
 				<h2>Menu</h2>
 			</div>
@@ -42,7 +42,7 @@
 			<div class="content-login-cesta w-33">
 				<div class="box-login">
 					<div id="log" class="btn-login">
-						<h2><a href="#">LOGIN</a></h2>
+						<h2><a href="#">LOGIN,</a></h2>
 					</div>
 				</div>
 				<div class="box-cesta">
@@ -69,35 +69,39 @@
 			</div>
 		</section>
 		<section id="content-log-registro">
-			<section id="clientenuevo" class="clientereg">
+			<section id="clientenuevo" class="clientereg w">
 				<div class="text-left">
-					<h2 class="f-24 newcuenta ">Nueva cuenta</h2>
-					<p>Crea tu cuenta PROFITNESS con ello podrás disfrutar de nuestro catalogo de productos, apuntarte a nuestas clases, ver y rastrear tus pedidos en tu cuenta y mucho más.</p>
-					<div>
+					<div class="h-30vh">
+						<h2 class="f-24 newcuenta ">Nueva cuenta</h2>
+					</div>
+					<div class="h-30vh">
+						<p>Crea tu cuenta PROFITNESS con ello podrás disfrutar de nuestro catalogo de productos, apuntarte a nuestas clases, ver y rastrear tus pedidos en tu cuenta y mucho más.</p>
+					</div>
+					<div class="h-40vh">
 						<span class="btn"><button class="btn-cuenta f-15  relleno ">Crear una cuenta</button></span>
 					</div>
 					<div class="contenedor-formulario">
 						<form action="registro.php" method="post" id="formreg" class="formreg" onSubmit="validaSubmit(event)">
 							<section class="info-personal">
-								<h3>Informacion Personal</h3>
+								<h3 class="w">Informacion Personal</h3>
 								<ul>
 									<li class="in-name">
 										<label for="nombre">Nombre:<span>*</span></label>
 										<input type="text"  name="nom" onfocus="borrarRevision(this)"  onBlur="validarNombre(this)" id="nombre" value="" >
 										<span class="errornom campo"></span>
 									</li>
-									<li class="in-lastname">
+									<li class="in-lastname ">
 										<label for="apellido">Apellidos:<span>*</span></label>
 										<input type="text"  name="lastname"  onBlur="validarApellido(this)" id="apellido" value="">
 										<span class="errorlast campo"></span>
 
 									</li>
-									<li class="year">
+									<li class="year ">
 										<label for="años">Edad:<span>*</span></label>
 										<input type="date"  onBlur="validarEdad(this)" name="edad" id="años" >
 										<span class="erroredad campo"></span>
 									</li>
-									<li class="sex">
+									<li class="sex ">
 										<label for="men">Hombre:</label>
 										<input type="radio" name="sexo" id="men" value="H">
 										<label for="woman">Mujer:</label>
@@ -105,7 +109,7 @@
 									</li>
 								</ul>	
 							</section>
-							<section class="info-credencial">
+							<section class="info-credencial w">
 								<h3>Informacion Cuenta</h3>
 								<ul>
 									<li class="mail">
@@ -126,7 +130,7 @@
 										<input type="password" name="repass" onBlur="repPass(this)" disabled id="repass" value="" >
 										<span class="errorpass campo"></span>
 									</li>
-									<li>
+									<li class="repass">
 										<input type="checkbox" onclick="comprobarCheck(this)" name="privacidad" id="privacidad" value="" />
 										<p>He leido los terminos y <a href="#">condiciones</a></p>
 										<span class="errorcheck campo"></span>
@@ -138,35 +142,42 @@
 					</div>
 				</div>
 			</section>
-			<section id="separador" class="titulo-centro">
+			<section id="separador" class=" w titulo-centro">
 				<h2> 
 					<p>PRO</p>	
-					<p>FIT<p>
+					<p>FIT</p>
 					<p>NESS</p>
 				</h2>
 			</section>
-			<section id="cliente" class="user-log">
-				<form action="login.php" method="post">
-						<ul>
+			<section id="cliente" class="user-log w">
+				<form action="login.php" method="post" class="formlog">
+					<div class="log-intro h-30vh">
+						<h3 class="f-36 ">Cuenta cliente</h3>
+						<p class="">Si ya tienes una cuenta, introduce tu log in.</p>
+					</div>
+					<ul class="h-30vh">
 						<li class="mail">
-								<label for="email">Direccion Email:<span>*</span></label>
-								<input type="email" class="inLow" name="email" id="email-log" onBlur="validarEmail(this)" value="">
-								<span class="errormail"></span></li>
-						<li class="pass"><label for="pass">Password<span>*</span></label>
-								<input type="password" name="plog" id="pass-log" onkeyup="validarPass(this)" value="">
-								<span class="errorpass1 errorpass2"></span>
+							<label for="email">Direccion Email:<span>*</span></label>
+							<input type="email" class="inLow w-75 input-style" name="email" id="email-log" onBlur="validarEmail(this)" value="">
+							<span class="errormail"></span>
 						</li>
-						</ul>
-						<div class="remember">
-							<input type="checkbox" id="checkregistro" name="recordar" >Recuerdame
-						</div>	
-						<button type="submit"  name="signin">Entrar</button>
-						<a href="#">Has olvidado la contraseña?</a>
+						<li class="pass"><label  for="pass">Password<span>*</span></label>
+							<input type="password" class="w-75 input-style" name="plog" id="pass-log" onkeyup="validarPass(this)" value="">
+							<span class="errorpass1 errorpass2"></span>
+						</li>
+						<li class="remember">
+							<input type="checkbox" id="checkregistro"  name="recordar" >Recuerdame
+						</li>
+					</ul>
+					<div class="h-40vh">
+						<span class="btn in-block"><button type="submit" class="f-15 relleno btn-cuenta"  name="signin">Entrar</button></span>
+						<a href="#" class="f_96 link-border">Has olvidado la contraseña?</a>
+					</div>
 				</form>
 			</section>
 		</section>
     </main>
-	<footer id="info-foot "class="panel-footer">
+	<footer id="info-foot "class="panel-footer w">
 		<section class="containt-footer-principal">
 			<section id="content-media">
 				<div class="box-logo">
@@ -198,7 +209,7 @@
 					molestiae natus expedita illo distinctio officia! 
 					 id.</p>
 			</section>
-			<section id="menu-footer">
+			<section id="menu-footer" class="w">
 				<ul>
 					<li><a href="#">Home </a></li>
 					<li><a href="#">Productos </a></li>
@@ -209,7 +220,7 @@
 				</ul>
 			</section>
 		</section>
-		<section id="copy">
+		<section id="copy" class="w">
 			<div>
 				<p>© ProFitNes Copyright 2018. All rights reserved.
 					<span>|</span>
@@ -225,7 +236,7 @@
 	</footer>
 	
 	 <script src="js/slideout-1.0.1/slidetoogle.js" type="text/javascript"></script>
-	 <script>
+	 <script type="text/javascript">
 
 
 //cesta items
@@ -379,7 +390,6 @@
 		   var msgnum = input.parentElement.querySelectorAll("span")[3];
 		   var msglett = input.parentElement.querySelectorAll("span")[4];
 			   // validad minuscula
-			   debugger;
 
 			   var lowLetter = /[a-z]/;
 			   if(lowLetter.test(input.value)){
