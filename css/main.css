@@ -45,7 +45,7 @@ body{
 }
 
 .main-login{
-    background: url(../img/battleropesguy-1440x662.jpg);
+    background: url(./img/battleropesguy-1440x662.jpg);
     background-repeat: no-repeat;
     background-position: 0vw 57vh;
 }
@@ -63,11 +63,17 @@ a{text-decoration: none;color: white;}
 .block{display: block;}
 .in-block{display: inline-block;}
 
-.w-75{ width: 75%;}
+.w-15{width: 15%;}
+.w-40{width: 40%;}
+.w-75{width: 75%;}
+.w-60{width: 60%;}
 .w-50{width: 50%;}
 .w-25{width: 25%;}
 .w-33{width: 33%;}
+.w-100{ width: 100%;}
 
+.h-100{height: 100%;} 
+.min-100vh{height: 100vh;}
 .h-30vh{ height: 30vh;}
 .h-40vh{ height: 40vh;}
 
@@ -99,6 +105,76 @@ label{display: block;}
     color:rgb(219, 219, 219);
 }
 
+
+/**********************
+******* ATAJOS FLEX ***
+*********************/
+
+.flex-col-around{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.f-center-hor{
+    display: flex;
+    justify-content: center;
+}
+
+.f-start-hor{
+    display: flex;
+    justify-content: start;
+}
+.f-around-hor{
+    display: flex;
+    justify-content: space-around;
+}
+.f-evenly-hor{
+    display: flex;
+    justify-content: space-evenly;
+}
+.f-between-hor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-col-evenly{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.f-col-center-ver-hor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-col-end-ver-hor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+.flex-col-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.f-row-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-center-fend{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 100px;
+}
 
 
 /************** HEADER **************
@@ -279,9 +355,7 @@ h1{
     color: black;
 }
 #header{
-    display: flex;
     width: 100%;
-    justify-content: space-around;
     padding: 20px 0px 12px 0px;
 }
 
@@ -290,21 +364,16 @@ h1{
 }
 
 .box-login{
-    width: 44px;
+    width: 20%;
     padding-right: 11px;
 }
 
 .box-logo{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    color: white;
     border: 1px solid black;
 }
 
 .box-logo img{
-    display: flex;
-    justify-content: space-between;
+    display: block;
 }
 
 .logo{
@@ -312,14 +381,12 @@ h1{
 }
 
 .content-login-cesta{
-    max-width: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-right: 100px;
     padding-left: 15px;
     border: 1px solid black;
 }
 .box-bur{
+    padding-left: 100px;
     border: 1px solid black;
 }
 
@@ -331,22 +398,21 @@ h1{
 ***************************************/
 
 #content-log-registro{
-    display: flex;
     width: 100%;
-    justify-content: space-evenly;
-    min-height: 100vh;
     padding-top: 80px;
 }
 
 
+
+
 .clientereg{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
     border: 1px solid;
     width: 40%;
     padding-left: 130px;
 }
+
+
 
 .newcuenta{
     padding: 20px;
@@ -359,30 +425,21 @@ h1{
     padding: 20px;
     line-height: 2em;
 }
-.text-left div:first-of-type{
-    padding-left: 50px;
-    display: flex;
-    align-items: center;
-}
 
 .btn-cuenta{
+    text-transform: uppercase;
     padding: 20px;
     font-weight: 700;
 }
 
 .titulo-centro {
-    display: flex;
-    width: 15%;
-    justify-content: center;
-    border: 1px solid;
+
 }
 
 
 
 .titulo-centro p{
-    height: 33vh;
-    display: flex;
-    align-items: center;
+    
 }
 
 .text-left{
@@ -392,28 +449,19 @@ h1{
 
 /******* LOG **********/
 .formlog{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+
 }
 .formlog ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+   
 }
 
 .log-intro{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin-left: 30px;
 }
 
 .user-log{
-    border: 1px solid;
-    width: 40%;
     padding-left: 30px;
-    display: flex;
+    
 }
 
 .link-border{

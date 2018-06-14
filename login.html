@@ -30,16 +30,16 @@
 		</nav>
 	</header>
     <main id="main" class="panel panel-header principal main-login">
-		<section id="header">
-			<div class="box-bur  w w-33">
+		<section id="header" class="f-around-hor">
+			<div class="box-bur f-col-end-ver-hor w w-33">
 				<button class="btn-hamburger toggle-button js-slideout-toggle">☰</button>
 				<h2>Menu</h2>
 			</div>
-			<div id="logo" class="w-33 box-logo">
+			<div id="logo" class="w-33 box-logo f-col-center-ver-hor">
 				<img  class="logo" src="img/strong-logo.jpg" alt="logo">
 				<h1>PRO<span>FITNESS</span></h1>
 			</div>
-			<div class="content-login-cesta w-33">
+			<div class="content-login-cesta f-center-fend w-33">
 				<div class="box-login">
 					<div id="log" class="btn-login">
 						<h2><a href="#">LOGIN,</a></h2>
@@ -68,16 +68,16 @@
 				</div>
 			</div>
 		</section>
-		<section id="content-log-registro">
-			<section id="clientenuevo" class="clientereg w">
-				<div class="text-left">
-					<div class="h-30vh">
+		<section id="content-log-registro" class="min-100vh f-evenly-hor">
+			<section id="clientenuevo" class="clientereg w w-40">
+				<div class="text-left f-col-center-ver-hor">
+					<div>
 						<h2 class="f-24 newcuenta ">Nueva cuenta</h2>
 					</div>
-					<div class="h-30vh">
+					<div class="w-60">
 						<p>Crea tu cuenta PROFITNESS con ello podrás disfrutar de nuestro catalogo de productos, apuntarte a nuestas clases, ver y rastrear tus pedidos en tu cuenta y mucho más.</p>
 					</div>
-					<div class="h-40vh">
+					<div>
 						<span class="btn"><button class="btn-cuenta f-15  relleno ">Crear una cuenta</button></span>
 					</div>
 					<div class="contenedor-formulario">
@@ -142,34 +142,36 @@
 					</div>
 				</div>
 			</section>
-			<section id="separador" class=" w titulo-centro">
-				<h2> 
+			<section id="separador" class="w-15 w titulo-centro">
+				<h2 class="flex-col-around w-100 h-100"> 
 					<p>PRO</p>	
 					<p>FIT</p>
 					<p>NESS</p>
 				</h2>
 			</section>
-			<section id="cliente" class="user-log w">
-				<form action="login.php" method="post" class="formlog">
-					<div class="log-intro h-30vh">
+			<section id="cliente" class="user-log f-center-hor w w-40">
+				<form action="login.php" method="post" class="formlog w-75 f-col-center-ver-hor">
+					<div class="log-intro">
 						<h3 class="f-36 ">Cuenta cliente</h3>
 						<p class="">Si ya tienes una cuenta, introduce tu log in.</p>
 					</div>
-					<ul class="h-30vh">
-						<li class="mail">
-							<label for="email">Direccion Email:<span>*</span></label>
-							<input type="email" class="inLow w-75 input-style" name="email" id="email-log" onBlur="validarEmail(this)" value="">
-							<span class="errormail"></span>
-						</li>
-						<li class="pass"><label  for="pass">Password<span>*</span></label>
-							<input type="password" class="w-75 input-style" name="plog" id="pass-log" onkeyup="validarPass(this)" value="">
-							<span class="errorpass1 errorpass2"></span>
-						</li>
-						<li class="remember">
-							<input type="checkbox" id="checkregistro"  name="recordar" >Recuerdame
-						</li>
-					</ul>
-					<div class="h-40vh">
+					<div>
+						<ul>
+							<li class="mail">
+								<label for="email">Direccion Email:<span>*</span></label>
+								<input type="email" class="inLow w-75 input-style" name="email" id="email-log" onBlur="validarEmail(this)" value="">
+								<span class="errormail"></span>
+							</li>
+							<li class="pass"><label  for="pass">Password<span>*</span></label>
+								<input type="password" class="w-75 input-style" name="plog" id="pass-log" onkeyup="validarPass(this)" value="">
+								<span class="errorpass1 errorpass2"></span>
+							</li>
+							<li class="remember">
+								<input type="checkbox" id="checkregistro"  name="recordar" >Recuerdame
+							</li>
+						</ul>
+					</div>
+					<div>
 						<span class="btn in-block"><button type="submit" class="f-15 relleno btn-cuenta"  name="signin">Entrar</button></span>
 						<a href="#" class="f_96 link-border">Has olvidado la contraseña?</a>
 					</div>
