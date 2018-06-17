@@ -24,7 +24,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#111111",GradientType=1);
 }
 
- *{
+ *,:after, :before{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -57,12 +57,24 @@ body{
     font-style: normal;
 }
 
-a{text-decoration: none;color: white;}
+a{text-decoration: none;color: white;display: block;}
 
+.t-shadow{
+    text-shadow:-1px -1px 2px rgba(0,0,0,0.8), 
+                -1px 0px rgba(0,0,0,0.8);
+}
+img{
+    display: block;
+    width: 100%;
+}
 
 /************** HEADER **************
 *************************************/
-
+/************* MENU ***************/
+.menu-oculto {
+    overflow: hidden;
+    background: linear-gradient(to left, #3e71c2, rgb(28, 79, 159));
+}
 
 /*****CESTA******/
 
@@ -84,7 +96,7 @@ a{text-decoration: none;color: white;}
 }
 
 .btn-cesta{
-    background: linear-gradient(to right, #2b40c9, rgba(43, 53, 146, 0.9));
+    background:linear-gradient(to right, #497bcd, rgb(19, 71, 150));
     height: 0px;
     width: 40px;
     padding: 24px;
@@ -96,6 +108,7 @@ a{text-decoration: none;color: white;}
     z-index: 1;
     box-sizing: content-box;
     transition: all 300ms ease-out;
+    border: 1px solid white;
 }
 
  .btn-cesta img{
@@ -118,30 +131,32 @@ a{text-decoration: none;color: white;}
 }
 
 .btn-cesta:after{
-    width: 40px;
-    height: 31px;
+    width: 55px;
+    height: 15px;
     position: absolute;
     left: 17px;
-    top: -12px;
+    top: -15px;
     padding: 7px;
-    border-radius: 26px;
-    background: linear-gradient(to right, #2a3ec0, rgb(42, 53, 147));
-    transition: all 800ms ease-out;
+    background:linear-gradient(to right, #3c6fc0, rgb(28, 80, 160));
+    transition: all 300ms ease-out;
     content: "";
-   /* -ms-transform: translate(60px,100px); 
-    -webkit-transform: translate(50px,100px); 
-    transform: translate(20px,-30px); */
+    border-top: .4px solid white;
+    -moz-border-radius: 100px 100px 0 0;
+    -webkit-border-radius: 100px 100px 0 0;
+    border-radius: 69px 69px 0px 0;
 }
 
 .btn-cesta:hover{
-  transition: all 100ms ease-out;
-  background: whitesmoke; 
-
+    background: linear-gradient(to right, #396cbc, rgb(33, 84, 164));
+    border: 1px solid black;
+    transition: all 400ms;
 }
 
 .btn-cesta:hover:after{
-    background: whitesmoke;
-    transition: all 660ms ease;
+
+    border: 0px solid white;
+    background: linear-gradient(to right, #3467b7, rgb(36, 87, 167));
+    transition: all 350ms ease-in-out;
     transform: translateY(25px);
 }
 
@@ -154,7 +169,7 @@ a{text-decoration: none;color: white;}
     right: 25px;
     width: 366px;
     border-radius: 4px;
-    background:linear-gradient(to right, #21319f, rgb(31, 39, 109));
+    background:linear-gradient(to right, #497bcd, rgb(19, 71, 150));
     padding: 35px 0px;
     z-index: 0;
 }
@@ -263,7 +278,11 @@ h1{
 }
 
 .box-bur h2{
-    padding-left: 15px;
+    text-transform: uppercase;
+    padding-left: 8px;
+    color: white;
+    transition: all 400ms ease-out;
+
 }
 
 /*********** REGISTRO y LOGIN ************
@@ -462,4 +481,9 @@ h1{
 
 .menu-foot ul li a{
     color:black;
+}
+
+
+#info-foot{
+    background: grey!important;
 }

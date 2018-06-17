@@ -1,0 +1,110 @@
+@keyframes slidebackground {
+    0%, 25% {background-image: url("../img/bikewomancross.jpg"); }
+    25%, 50% {background-image: url("../img/ghdsitups.jpg"); }
+    50%, 75% {background-image: url("../img/clean.jpg"); }
+    75%, 100% { background-image: url("../img/1609-life-fitness-blog-02-entrenamiento-funcional_00-1024x535.jpg"); }
+}
+
+@keyframes widthmenu {
+
+}
+
+
+.main-header-fondo {
+    background: transparent url(../img/bikewomancross.jpg);
+    animation: slidebackground 50s infinite 4s alternate ease-in;
+    -webkit-animation: slidebackground 50s infinite 4s alternate ease-in;
+    -o-animation: slidebackground 50s infinite 4s alternate ease-in;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    height: 100vh;
+    position: relative;
+}
+
+
+.title-menu{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    height: 35px;
+}
+
+
+.lineup{
+    top: 10px;
+    background: #4678ca;
+    width: 26px;
+    height: 5px;
+    position: absolute;
+}
+
+.linedown{
+    top: 20px;
+    background: #7f9dcc;
+    width: 20px;
+    height: 5px;
+    position: absolute;
+
+}
+
+.btn-hamburger:hover .linedown{
+    width: 26px;
+    transition: width 400ms ease-out;
+}
+.btn-hamburger:hover .lineup{
+    width: 20px;
+    transition: width 400ms ease-out;
+}
+
+.btn-hamburger:hover+h2{
+     color:black;
+    transition: all 500ms ease-out;
+    text-shadow:-1px -1px rgb(255, 255, 255), -1px 0px rgb(255, 255, 255);
+}
+
+.flex-img-25 ul li{
+    width: 25%;
+    padding: 20px;
+}
+
+/******tienda********/
+
+.flex-img-50 div {
+    width: 50%;
+}
+.flex-img-33 ul li{
+    width: 33%;
+    padding: 20px;
+}
+.flex-img-100 ul li{
+    padding: 30px;
+}
+
+.valoracion i{
+    display: inline-block;
+}
+
+.img-back-clase a, .img-back-horarios a, .img-back-ckase a{
+    width: 50%;
+    padding: 50px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+}
+
+.img-back-clase div, .img-back-horarios div, .img-back-ckase div{
+    width: 50%;
+    padding: 50px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+}

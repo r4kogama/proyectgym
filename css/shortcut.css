@@ -32,6 +32,8 @@
 .m-t5{margin-top: 50px;}
 .m-t6{margin-top: 60px;}
 .m-t7{margin-top: 70px;}
+.m-t10{margin-top: 100px;}
+
 .m-l1{margin-left: 10px;}
 .m-l2{margin-left: 20px;}
 .m-l3{margin-left: 30px;}
@@ -53,7 +55,6 @@
 .m-b5{margin-bottom: 50px;}
 .m-b6{margin-bottom: 60px;}
 .m-b7{margin-bottom: 70px;}
-
 .p-t1{padding-top: 10px;}
 .p-t2{padding-top: 20px;}
 .p-t3{padding-top: 30px;}
@@ -122,12 +123,7 @@ label{
 ******* ATAJOS FLEX ***
 *********************/
 
-.flex-col-around{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+
 .f-center-hor{
     display: flex;
     justify-content: center;
@@ -151,32 +147,22 @@ label{
     flex-wrap: wrap;
 }
 
-.flex-col-evenly{
+
+
+
+/*******column*********/
+.flex-col-around{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
 }
-
 .f-col-center-ver-hor{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.f-row-cer-end{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-}
-.f-row-cer-star{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-
 .f-col-end-ver-hor{
     display: flex;
     flex-direction: column;
@@ -195,18 +181,46 @@ label{
     justify-content: center;
     align-content: space-between;
 }
-
-.f-row-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .f-col-flexstar{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
+
+.flex-col-evenly{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+
+/****row*****/
+.f-row-center-around{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.f-row-cer-end{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.f-row-cer-star{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.f-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .f-row-left{
     display: flex;
     flex-direction: row;
@@ -217,5 +231,6 @@ label{
     flex-direction: row;
     justify-content: right;
 }
+
 
 
