@@ -1,8 +1,8 @@
 @keyframes slidebackground {
-    0%, 25% {background-image: url("../img/bikewomancross.jpg"); }
+    0%, 25% {background-image: url("../img/bikewomancross.png"); }
     25%, 50% {background-image: url("../img/ghdsitups.jpg"); }
     50%, 75% {background-image: url("../img/clean.jpg"); }
-    75%, 100% { background-image: url("../img/1609-life-fitness-blog-02-entrenamiento-funcional_00-1024x535.jpg"); }
+    75%, 100% { background-image: url("../img/gridfunctionaltrainning.jpg"); }
 }
 
 @keyframes widthmenu {
@@ -10,8 +10,10 @@
 }
 
 
+
+
 .main-header-fondo {
-    background: transparent url(../img/bikewomancross.jpg);
+    background: transparent url("../img/bikewomancross.png");
     animation: slidebackground 50s infinite 4s alternate ease-in;
     -webkit-animation: slidebackground 50s infinite 4s alternate ease-in;
     -o-animation: slidebackground 50s infinite 4s alternate ease-in;
@@ -37,17 +39,18 @@
     top: 10px;
     background: #4678ca;
     width: 26px;
-    height: 5px;
+    height: 6px;
     position: absolute;
+    border: 1px solid #7f9dcc;
 }
 
 .linedown{
     top: 20px;
     background: #7f9dcc;
     width: 20px;
-    height: 5px;
+    height: 6px;
     position: absolute;
-
+    border: 1px solid #4678ca;
 }
 
 .btn-hamburger:hover .linedown{
@@ -65,41 +68,137 @@
     text-shadow:-1px -1px rgb(255, 255, 255), -1px 0px rgb(255, 255, 255);
 }
 
-.flex-img-25 ul li{
-    width: 25%;
-    padding: 20px;
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
 }
 
-/******tienda********/
+.flex-img-25 ul li{
+    width: 25%;
+    min-width: 300px;
+    margin: 60px 0px;
+    padding: 0px 20px;
+    color: #fce06c!important;
+    animation: width 1s ease-out;
+}
+
+.flex-img-25 ul li a{color: #f1f1f1!important;}
+
+.flex-img-25 ul li a h4{
+    font-size: 1.4em;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 22.3px 0px;
+}
+
+.flex-img-25 ul li a p{
+    font-size: 1.1em;
+    font-family: "FlamaRegular";
+    padding-left: 15px;
+}
+
 
 .flex-img-50 div {
     width: 50%;
 }
-.flex-img-33 ul li{
-    width: 33%;
-    padding: 20px;
+.flex-img-33 ul li a figure{
+    min-width: 300px;
 }
+
+.flex-img-33 ul li{
+     width: 33%;
+    border: 1px solid #4375c7;
+}
+
 .flex-img-100 ul li{
     padding: 30px;
 }
 
 .valoracion i{
     display: inline-block;
+    color: black;
 }
 
-.img-back-clase a, .img-back-horarios a, .img-back-ckase a{
+
+.background-services{
+    background: transparent url("../img/Work-hard-quotes-Wallpaper.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+/******CLASES ******/
+.img-back-clase a{
     width: 50%;
     padding: 50px;
     -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
 }
 
-.img-back-clase div, .img-back-horarios div, .img-back-ckase div{
-    width: 50%;
-    padding: 50px;
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+.img-back-clase div span:nth-child(0) {
+    padding-bottom: 30px;
+    font-size: 2em;
 }
+
+
+.img-back-clase div{
+    width: 50%;
+    padding: 53px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 33% 100%);
+    background: white;
+}
+
+.img-back-clase img:hover{
+    transform: scale3d(1.1,1.1,1.1);
+    transform-style: preserve-3d;
+    box-shadow: -7px 10px 16px #00000080;
+    transition: all 400ms ease;
+}
+.img-back-clase img{
+     transform: scale3d(1, 1, 1);
+    transform-style: preserve-3d;
+    box-shadow: -2px -1px 9px #00000069;
+    transition: all 600ms ease-in-out;
+}
+
+/****tienda****/
+
+.containt-width-products{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.box-producto{
+    border-top: 1px solid #3f72c3;
+    padding: 30px;
+}
+
+figcaption{
+    color:black;
+}
+
+
+.title-productos, .title-ofertas, .title-valores{
+    padding: 105px 0px;
+    margin: 0px 20px;
+} 
+    
+
+.title-productos h3, .title-ofertas h3, .title-valores h3{
+    font-size: 3em;
+}
+.title-productos p, .title-ofertas p, .title-valores p{
+    font-size: 1.3em;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 
 .lista-productos {
     display: flex;

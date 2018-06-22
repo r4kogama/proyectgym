@@ -13,6 +13,36 @@
   100% { opacity: 1; -webkit-transform: translateX(0); }
 }
 
+
+@keyframes width {
+    0% { opacity: 0; transform: scale(0.5,0.5); }
+    50% { opacity: 0; transform: scale(1.5,1.5); }
+  100% { opacity: 1; transform: scale(1,1); }
+}
+
+/********fonts*****/
+
+@font-face {
+    font-family: 'gilroybold';
+    src: url('../fonts/Gilroy-ExtraBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroylight';
+    src: url('../fonts/Gilroy-Light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FlamaRegular';
+    src: url('../fonts/FlamaBookRegular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /****************************
  ***********BODY************* 
  ***************************/
@@ -40,7 +70,7 @@
 body{
     line-height: 1.5;
     font-size: 12px;
-    font-family: 'FlamaRegular', Helvetica, Arial, sans-serif;
+    font-family: 'gilroylight', Helvetica, Arial, sans-serif;
     min-width: 360px;
 }
 
@@ -50,12 +80,7 @@ body{
     background-position: bottom left;
 }
 
-@font-face {
-    font-family: 'FlamaRegular';
-    src: url('../fonts/FlamaBookRegular.otf');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 a{text-decoration: none;color: white;display: block;}
 
@@ -66,6 +91,14 @@ a{text-decoration: none;color: white;display: block;}
 img{
     display: block;
     width: 100%;
+}
+
+h1{
+    font-family: "FlamaRegular";
+}
+
+h3,h4{
+    font-family: "gilroybold";
 }
 
 /************** HEADER **************
@@ -135,7 +168,7 @@ img{
     height: 15px;
     position: absolute;
     left: 17px;
-    top: -15px;
+    top: -16px;
     padding: 7px;
     background:linear-gradient(to right, #3c6fc0, rgb(28, 80, 160));
     transition: all 300ms ease-out;
@@ -263,9 +296,17 @@ h1{
 .formreg{display: none;}
 
 .box-login{
-    width: 20%;
-    padding-right: 11px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 40%;
 }
+.btn-login h2{
+    font-weight: 900;
+    font-size: 1.3em;
+    color: #ffffff;
+}
+
 
 .box-logo img{display: block;}
 .logo{width: 170px;}
@@ -319,7 +360,7 @@ h1{
 
 .btn-cuenta{
     text-transform: uppercase;
-    padding: 20px;
+    padding: 10px 20px;
     font-weight: 700;
 }
 
@@ -384,7 +425,7 @@ h1{
     position: relative;
     top: 0;
     bottom: 0;
-    left: 0px;
+    left: 0;
     right: 0;
     border: 0px;
     background: transparent;
@@ -405,7 +446,7 @@ h1{
 }
 .btn:hover:after{
     content:"";
-    transform: translate(1px,-1px);
+    transform: translate(0.6px,0px);
     width: 99%;
     height: 0%;
     opacity:1;
@@ -415,7 +456,7 @@ h1{
 .btn:hover:before{
     content:"";
     width: 98.5%;
-    transform: translate(0px,56px);
+    transform: translate(0px,35px);
     height: 0%;
     opacity:1;
     transition: all 250ms ease;

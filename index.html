@@ -17,8 +17,8 @@
 
 	<!-- JS-->
 	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src ="js/parallax.js-1.5.0/parallax.min.js"></script>
 	 <script src="js/slideout-1.0.1/dist/slideout.min.js" type="text/javascript"></script>
-	
 	<title>gym</title>
 </head>
 <body>
@@ -44,13 +44,17 @@
 					<h2 class="t-shadow">Menu</h2>
 				</div>
 				<div id="logo" class="w-33 box-logo f-col-center-ver-hor">
-					<img  class="logo" src="img/logo.png" alt="logo">
+					<img  class="logo" src="img/LOGO2.png" alt="logo">
 					<h1 class="f-24">PRO<span class="">FITNESS</span></h1>
 				</div>
-				<div class="content-login-cesta f-row-cer-end w-33">
+				<div class="content-login-cesta f-row-cen-bet-wrap w-33">
 					<div class="box-login">
 						<div id="log" class="btn-login">
-							<h2><a href="login.html">LOGIN,</a></h2>
+							<h2>
+                                <a href="login.html">
+                                    <span class="btn in-block"><button class="relleno btn-cuenta">LOGIN,</button></span>
+                                </a>
+                            </h2>
 						</div>
 					</div>
 					<div class="box-cesta">
@@ -79,59 +83,73 @@
 		</div>
 		<section id="principal" class="">
 			<section id="container-main" class="">
-				<section class="banner-valores">
-					<div class="f-col-center-ver-hor m-b5 m-t10">
-						<h3>Aprende nuestra filosofia</h3>
-						<p>Ejercita el cuerpo por completo, a fin de que se encuentre preparado para cualquier desafío que se pueda presentar en un futuro, cada dia es un nuevo reto.</p>
-					</div>
-					<div class="flex-img-25">
-						<ul class="f-row-center-around">
-							<li>
-								<img src="img/trx_functionaltrainingtools_group2-min_1.jpg" alt="functionaltraining">
-								<h4>Entrenamiento funcional</h4>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
-							</li>
-							<li>
-								<img src="img/fortalecer-cardio.jpg" alt="cardio">
-								<h4>Fortalecimiento y cardio</h4>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
-							</li>
-							<li>
-								<img src="img/equipo.jpg" alt="trabajoenequipo">
-								<h4>Comunidad de apoyo</h4>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
-							</li>
-							<li>
-								<img src="img/que-es-la-dieta-paleo-678x381.jpg" alt="dietapaleo">
-								<h4>Control de habitos</h4>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
-							</li>
-						</ul>
-					</div>
+				<section id="banner-valores">
+                    <div class="f-col-center-ver-hor title-valores ">
+                        <h3>Aprende nuestra filosofia</h3>
+                        <p>Ejercita el cuerpo por completo, a fin de que se encuentre preparado para cualquier desafío que se pueda presentar en un futuro, cada dia es un nuevo reto.</p>
+                    </div>
+                    <div class="parallax-window" data-parallax="scroll"  data-parallax="scroll" data-android-fix="true" data-speed="0.5" data-bleed="1" data-image-src="img/harderfasterbetterstronger.jpg">
+                        <div class="flex-img-25">
+                            <ul class="f-row-center-around">
+                                <li>
+                                    <a href="#">
+                                        <img style="border-radius: 3px;" src="img/trx_functionaltrainingtools_group2-min_1.jpg" alt="functionaltraining">
+                                        <h4>Entrenamiento funcional</h4>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/fortalecer-cardio.jpg" style="border-radius: 3px;" alt="cardio">
+                                        <h4>Fortalecimiento y cardio</h4>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
+                                    </a> 
+                                </li>
+                                <li>
+                                     <a href="#">
+                                        <img src="img/equipo.jpg" style="border-radius: 3px;" alt="trabajoenequipo">
+                                        <h4 class="p-box">Comunidad de equipo</h4>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
+                                     </a>
+                                </li>
+                                <li>
+                                     <a href="#">
+                                        <img src="img/que-es-la-dieta-paleo-678x381.jpg" style="border-radius: 3px;" alt="dietapaleo">
+                                        <h4 class="">Control de habitos</h4>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita soluta sapiente, eligendi molestiae numquam iure recusandae rem excepturi ex.</p>
+                                     </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> 
 				</section>
 				<section class="banner-servicios">
 					<div class="flex-img-100">
-						<div class="f-col-center-ver-hor m-b5 m-t10">
+						<div class="f-col-center-ver-hor title-ofertas">
 							<h3>Nuestras ofertas</h3>
 							<p>Todo lo que necesitas para empezar con nosotros, aprovecha nuestra promocion gratis e informate de nuestros contratos flexibles y todo lo que ofrece las actividades digidas en grupo</p>
 						</div>
-						<ul>
+                        <div class="background-services">
+                            <ul>
 							<li class="img-back-clase w-100 f-row-center-around">
 								<a href="#">
-									<img src="img/slider3.jpg" alt="foto">
+									<img src="img/iniciomotivacion.jpg" alt="foto">
 								</a>
 								<div class="w-50 f-col-center-ver-hor">
-									<h3>Solicita tu clase</h3>
-									<h3>Iniciacion<span>gratis</span></h3>
+                                    <span>
+                                        <h3>Solicita tu clase<span>Iniciacion gratis</span></h3>
+                                    </span>
 									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, voluptas officia cupiditate necessitatibus deserunt, placeat ipsam laboriosam quas accusamus reprehenderit mollitia dolor distinctio quaerat. Dicta eos odit expedita ullam porro?</p>
 								</div>
 							</li>
-							<li class="img-back-horarios w-100 f-row-center-around">
+							<li class="img-back-clase w-100 f-row-center-around">
 								<a href="#">
-									<img src="img/discover-our-class.jpg" alt="clasesdirigidas">
+									<img src="img/clases_discover.jpg" alt="clasesdirigidas">
 								</a>
 								<div class="w-50 f-col-center-ver-hor">
-									<h3>Descubre nuestras clases dirigidas</h3>
+                                    <span>
+                                        <h3>Descubre nuestras<span>clases dirigidas</span></h3>
+                                    </span>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, cum.
 									</p>
@@ -142,42 +160,46 @@
 									<img src="img/ringsdips.jpg" alt="ringdips">
 								</a>
 								<div class="w-50 f-col-center-ver-hor">
-									<h3>Variedad</h3>
-									<h3>de horarios y tarifas</h3>
+                                    <span>
+                                        <h3>Variedad<span>de horarios y tarifas</span></h3>
+                                    </span>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, cum.
 									</p>
 								</div>
 							</li>
 						</ul>
+                        </div>
 					</div>
 				</section>
 				<section class="banner-product">
-					<div class="f-col-center-ver-hor m-b5 m-t10">
+					<div class="f-col-center-ver-hor title-productos">
 						<h3>PRODUCTS</h3>
 						<p>
 							Scroll abajo para descubrir nuestra seleccion de articulo/productos top.
 						</p>
 					</div>
-					<div class=" flex-img-33">
+					<div class="containt-width-products flex-img-33">
 						<ul class="lista-productos">
 							<li>
 								<a href="#">
 									<figure>
 										<div>
-											<img src="img/bebida-recuperadora-recovery-drink-226ers.jpg" alt="recoverydrink226ers">
+											<img src="img/recovery_drink-mini.jpg" alt="recoverydrink226ers">
 										</div>
-										<div class="valoracion">
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-										</div>
-										<figcaption>
-											<h3>Recovery Drink 226ERS proteina 1kg</h3>
-											<p>40€</p>
-										</figcaption>
+                                        <div class="box-producto">
+                                            <div class="valoracion">
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+										    </div>
+                                            <figcaption>
+                                                <h3>Recovery Drink 226ERS proteina 1kg</h3>
+                                                <p>40€</p>
+                                            </figcaption>
+                                        </div>
 									</figure>
 								</a>	
 							</li>
@@ -187,18 +209,20 @@
 										<div>
 											<img src="img/rollergrid.jpg" alt="rollerfoam">
 										</div>
-										<div class="valoracion">
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<p>4.7</p>
-										</div>
-										<figcaption>
-											<h3>Foam Roller GRID STK X masaje muscular</h3>
-											<p>25€</p>
-										</figcaption>
+                                        <div class="box-producto">
+                                            <div class="valoracion">
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <p>4.7</p>
+                                            </div>
+                                            <figcaption>
+                                                <h3>Foam Roller GRID STK X masaje muscular</h3>
+                                                <p>25€</p>
+                                            </figcaption>
+                                        </div>
 									</figure>
 								</a>	
 							</li>
@@ -208,17 +232,19 @@
 										<div>
 											<img src="img/rehband_knee_header.jpg" alt="rehband neopreno">
 										</div>
-										<div class="valoracion">
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-										</div>
-										<figcaption>
-											<h3>REHBAND neopreno 5mm</h3>
-											<p>32€</p>
-										</figcaption>
+                                        <div class="box-producto">
+                                            <div class="valoracion">
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                            </div>
+                                            <figcaption>
+                                                <h3>REHBAND neopreno 5mm</h3>
+                                                <p>32€</p>
+                                            </figcaption>
+                                        </div>
 									</figure>
 								</a>	
 							</li>
@@ -228,17 +254,19 @@
 										<div>
 											<img src="img/ropesalto.jpg" alt="cuerdasaltonylon">
 										</div>
-										<div class="valoracion">
+                                        <div class="box-producto">
+                                            <div class="valoracion">
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
-										</div>
-										<figcaption>
-											<h3>Cuerda de salto nylon ajustable</h3>
-											<p>21€</p>
-										</figcaption>
+                                            </div>
+                                            <figcaption>
+                                                <h3>Cuerda de salto nylon ajustable</h3>
+                                                <p>21€</p>
+                                            </figcaption>
+                                        </div>
 									</figure>
 								</a>	
 							</li>
@@ -248,17 +276,19 @@
 										<div>
 											<img src="img/Wod-Grips.jpg" alt="guantesgrip">
 										</div>
-										<div class="valoracion">
+                                        <div class="box-producto">
+                                            <div class="valoracion">
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
 											<i class="fa fa-star full"></i>
-										</div>
-										<figcaption>
-											<h3>Guantes Gymnastics Grips </h3>
-											<p>10€</p>
-										</figcaption>
+                                            </div>
+                                            <figcaption>
+                                                <h3>Guantes Gymnastics Grips </h3>
+                                                <p>10€</p>
+                                            </figcaption>
+                                        </div>    
 									</figure>
 								</a>	
 							</li>
@@ -266,19 +296,21 @@
 								<a href="#">
 									<figure>
 										<div>
-											<img src="img/cinturon-rogue-fitness-gimnasio.jpg" alt="cinturondeadlift">
+											<img src="img/cinturon-rogue.jpg" alt="cinturondeadlift">
 										</div>
-										<div class="valoracion">
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-											<i class="fa fa-star full"></i>
-										</div>
-										<figcaption>
-											<h3>Rogue cinturon 10mm lifting lumbar</h3>
-											<p>35€</p>
-										</figcaption>
+                                        <div class="box-producto">
+                                            <div class="valoracion">
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                                <i class="fa fa-star full"></i>
+                                            </div>
+                                            <figcaption>
+                                                <h3>Rogue cinturon 10mm lifting lumbar</h3>
+                                                <p>35€</p>
+                                            </figcaption>
+                                        </div>    
 									</figure>
 								</a>	
 							</li>
@@ -312,8 +344,8 @@
 				<section class="containt-footer-principal">
 					<section id="content-media" class="w-40 f-col-center-ver-hor">
 						<div class="box-logo">
-							<img  class="logo" src="" alt="logo">
-							<h1>PRO<span>FITNESS</span></h1>
+							<img  class="logo" src="img/LOGO2.png" alt="logo">
+							<h2>PRO<span>FITNESS</span></h2>
 						</div>
 						<ul class="f-row-center">
 							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -368,6 +400,11 @@
     </main>
 	 <script src="js/slideout-1.0.1/slidetoogle.js" type="text/javascript"></script>
 	 <script type="text/javascript">
+        $(document).ready(function() {
+			$('.parallax-window').parallax({imageSrc: 'img/harder.jpg'});
+		});
+         
+         
 	//cesta items
 		function cesta(cart){
 			cart.classList.remove("none");
@@ -387,10 +424,7 @@
 			document.getElementsByClassName("formreg")[0].classList.toggle("showform");
 		  }
 
-		  $(document).ready(function() {
-
-			console.log("hello");
-		});
+	
 
 </script>
 </body>

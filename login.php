@@ -72,6 +72,9 @@
 			</div>
 		</section>
 		<section id="content-log-registro" class="min-100vh p-t8 f-evenly-hor w-100">
+		<?php
+            echo "hola";
+            ?>
 			<section id="clientenuevo" class="clientereg  w w-40">
 				<div class="text-left f-col-center-ver-hor">
 					<div class="w-100 m-t2 f-row-left">
@@ -188,8 +191,8 @@
 			<section class="containt-footer-principal">
 				<section id="content-media" class="w-40 f-col-center-ver-hor">
 					<div class="box-logo">
-						<img  class="logo" src="img/logo.png" alt="logo">
-						<h1>PRO<span>FITNESS</span></h1>
+						<img  class="logo" src="img/LOGO2.png" alt="logo">
+						<h2>PRO<span>FITNESS</span></h2>
 					</div>
 					<ul class="f-row-center">
 						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
