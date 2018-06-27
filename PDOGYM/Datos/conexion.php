@@ -2,7 +2,7 @@
 class Conexion extends PDO {
 	
 	private const servidor= "localhost";
-    private const basededatos = "Gym";
+    private const basededatos = "gym";
 	private const usuario= "root";
 	private const password= "";
 	

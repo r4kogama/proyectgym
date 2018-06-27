@@ -1,19 +1,40 @@
 @keyframes slidebackground {
-    0%, 25% {background-image: url("../img/bikewomancross.png"); }
+    0%, 25% {background-image: url("../img/flexionchica-min.jpg"); }
     25%, 50% {background-image: url("../img/ghdsitups.jpg"); }
-    50%, 75% {background-image: url("../img/clean.jpg"); }
-    75%, 100% { background-image: url("../img/gridfunctionaltrainning.jpg"); }
+    50%, 75% {background-image: url("../img/Life-Fitness-Synrgy-360.jpg"); }
+    75%, 100% { background-image: url("../img/clean.jpg"); }
 }
 
 @keyframes widthmenu {
 
 }
 
+@keyframes movimientopesa {
+    0%, 100% {
+        transform: translate(0px);
+    }
+    
+    0% {
+        transform: translate(0vw, 0);
+    }
+    100% {
+        transform: translate(100vw, 0);
+    }
+}
+
+@keyframes spin { 
+    from { 
+        transform: rotate3d(0,0,0,0deg); 
+    } to { 
+        transform: rotate3d(-2,-2,-6,360deg); 
+    }
+}
+
 
 
 
 .main-header-fondo {
-    background: transparent url("../img/bikewomancross.png");
+    background: transparent url("../img/flexionchica-min.jpg");
     animation: slidebackground 50s infinite 4s alternate ease-in;
     -webkit-animation: slidebackground 50s infinite 4s alternate ease-in;
     -o-animation: slidebackground 50s infinite 4s alternate ease-in;
@@ -100,95 +121,185 @@
 }
 
 
-.flex-img-50 div {
-    width: 50%;
-}
-.flex-img-33 ul li a figure{
-    min-width: 300px;
-}
-
-.flex-img-33 ul li{
-     width: 33%;
-    border: 1px solid #4375c7;
-}
 
 .flex-img-100 ul li{
-    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 80px;
 }
-
 .valoracion i{
     display: inline-block;
+    color: rgb(255, 188, 44);
+    padding-right: 2px;
+}
+.valoracion p{
+    display: inline-block;
+    padding-left: 5px;
     color: black;
 }
 
 
 .background-services{
-    background: transparent url("../img/Work-hard-quotes-Wallpaper.png");
+    background: transparent url(../img/Work-hard-quotes-Wallpaper.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+.background-services ul{
+    padding: 30px 0px;
 }
 
+.box-vacio{
+    width: 100%;
+    height: 8%;
+    transform: skewY(40deg);
+    background: #3dc5d4d9;
+    z-index: 0;
+    position: fixed;
+}
+.transform-0{
+    transform-origin: 49% 50%;
+    z-index: -1;
+}
+.transform-1{
+    transform-origin: -84% 50%;
+}
+.transform-3{
+    transform-origin: 50% 50%;
+    z-index: -1;
+}
+
+.box-vacio div{
+    position: absolute;
+    top: 44%;
+    width: 56px;
+    opacity: .7;
+    z-index: 0;
+    animation: movimientopesa 15s linear infinite alternate; 
+    transform: skewY(-40deg);
+}
+.pesa{
+    width: 100%;
+    transform: skewY(0deg);
+    animation-name: spin;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 
 /******CLASES ******/
-.img-back-clase a{
+.img-back-clase  div:first-child{
+    transform: translateX(-52px);
+}
+.img-back-clase  div:first-child a{
+    -ms-clip-path: polygon(0% 0%, 100% 0%, 67% 100%, 10% 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 67% 100%, 10% 100%);
+    -moz-clip-path: polygon(0% 0%, 100% 0%, 67% 100%, 10% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 67% 100%, 10% 100%);
+    -ms-filter: drop-shadow(-10px 8px 5px rgba(0,0,0,0.5));
+    -moz-filter: drop-shadow(-10px 8px 5px rgba(0,0,0,0.5));
+    -webkit-filter: drop-shadow(-10px 8px 5px rgba(0,0,0,0.5)); 
+    filter: drop-shadow(-10px 8px 5px rgba(0,0,0,0.5));
+    transform: scale3d(1,1,1); 
+}
+.img-back-clase  div:last-child{
+    background: white;
+    height: 290px;
     width: 50%;
     padding: 50px;
-    -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+    transform: translateX(52px);
+    -ms-filter: drop-shadow(17px 4px 6px rgba(0,0,0,0.5));
+    -moz-filter: drop-shadow(17px 4px 6px rgba(0,0,0,0.5));
+    -webkit-filter: drop-shadow(17px 4px 6px rgba(0,0,0,0.5));
+    filter: drop-shadow(17px 4px 6px rgba(0,0,0,0.5));
+    -ms-clip-path: polygon(23% 0, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(23% 0, 100% 0%, 100% 100%, 0% 100%);
+    -moz-clip-path: polygon(23% 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(23% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.img-back-clase div span:nth-child(0) {
+
+.img-back-clase div:nth-child(2) h3 {
     padding-bottom: 30px;
     font-size: 2em;
-}
-
-
-.img-back-clase div{
-    width: 50%;
-    padding: 53px;
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 33% 100%);
-    background: white;
 }
 
 .img-back-clase img:hover{
     transform: scale3d(1.1,1.1,1.1);
     transform-style: preserve-3d;
-    box-shadow: -7px 10px 16px #00000080;
     transition: all 400ms ease;
+    -ms-filter: drop-shadow(-9px 8px 4px rgba(0,0,0,0.3));
+    -moz-filter: drop-shadow(-9px 8px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(3px 0px 9px rgba(0,0,0,0.5));
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 10% 100%);
+    -moz-clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 10% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 10% 100%);
 }
+
 .img-back-clase img{
-     transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
     transform-style: preserve-3d;
-    box-shadow: -2px -1px 9px #00000069;
     transition: all 600ms ease-in-out;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 10% 100%);
+    -moz-clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 10% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 10% 100%);
+}
+
+.info-services-clip>span:nth-child(1), .info-services-clip p{
+    padding-left: 50px;
 }
 
 /****tienda****/
 
+.flex-img-33 ul li{
+    width: 26%;
+    margin-bottom: 100px;
+    flex-basis: 245px;
+    padding-right: 30px;
+}
+
+.flex-img-33 ul li a figure{min-width: 210px;}
+
+figure .box-img{
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0px;
+    overflow: hidden;
+}
+.banner-product{
+    position: relative;
+    z-index: 1;
+}
 .containt-width-products{
     max-width: 1000px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 .box-producto{
-    border-top: 1px solid #3f72c3;
-    padding: 30px;
+    height: 135px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 7px 30px;
+    border-radius: 36px 7px 138px;
+    background: linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%);
 }
 
-figcaption{
-    color:black;
+figcaption p{
+    font-weight: 900;
+    font-size: 1.1em;
 }
-
 
 .title-productos, .title-ofertas, .title-valores{
     padding: 105px 0px;
     margin: 0px 20px;
 } 
     
-
 .title-productos h3, .title-ofertas h3, .title-valores h3{
     font-size: 3em;
 }
@@ -203,7 +314,155 @@ figcaption{
 .lista-productos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    margin: 0px 30px;
 }
+
+li figure .box-img  img{
+    transform: translateX(0px);
+    transition: all 700ms ease-in-out;
+    opacity: 1;
+}
+li figure:hover .box-img  img{
+    transform: translateX(-250px);
+    transition: all 700ms ease-in-out;
+    opacity: 0;
+}
+
+.box-img{
+    position: relative;
+}
+.box-img:after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 40px 0px;
+    transition: all 650ms  ease-in-out;
+    opacity: 0;
+    transform: translate3d(222px, -286px, 0px);
+}
+
+
+
+.item1:after{
+    content:  url(../img/bolsa_recovery_mini.jpg);
+}
+.item2:after{
+    content:  url(../img/rollergrid_muscle.jpg);
+}
+.item3:after{
+    content:  url(../img/rehband_knee_header_men.jpg);
+}
+.item4:after{
+    content:  url(../img/ropesalto_chica.jpg);
+}
+.item5:after{
+    content:  url(../img/handgrip.jpg);
+}
+.item6:after{
+    content:  url(../img/cinturon_men.jpg);
+}
+
+li figure:hover .box-img:after{
+    transform: translate3d(0px, -286px, 0px);
+    transform-style: preserve-3d;
+    transition: all 650ms  ease-in-out;
+    opacity: 1;
+}
+
+
+
+/***********newslatter*****************/
+#content-newsletter{
+    position: relative;
+    background: linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%);
+}
+.box-img-news {
+    z-index: 1;
+    position: absolute;
+    top: -100px;
+    left: 0px;
+    width: 50%;
+}
+.flex-news-50{
+    width: 50%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    transform: translate3d(100%,0px,0px);
+    padding-top: 104px;
+    padding-bottom: 65px;
+}
+.flex-news-50 h2{
+    font-size: 2.5em;
+    border-bottom: 1px solid black;
+    font-family: "gilroybold";
+    text-transform: uppercase;
+}
+#formnews ul li:nth-child(2), #formnews ul li:nth-child(3){
+    display: inline-block;
+}
+
+.flex-news-50 h3{
+    padding-top: 20px;
+    font-size: 1.5em;
+    color: black!important;
+    font-family: "gilroybold";
+    text-transform: uppercase;
+}
+.flex-news-50 h3 a{
+    color: black;
+    transition: all 600ms;
+}
+.flex-news-50 h3 a:hover{
+    color: white;
+    transition: all 600ms;
+}
+#mailnews:focus {
+    background-color: rgba(28, 79, 159, 0.80);
+}
+
+#mailnews{
+    padding: 10px;
+    width: 250px;
+    background: white;
+    border-radius: 4px;
+    border: 0;
+    color: black;
+    margin-right: 20px;
+}
+
+
+.bikecross{
+    transform: translateY(0px);
+    transition-duration: 1.2s;
+    transition-property: transform;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(.42,0,.13,1.01);
+    background: transparent url(../img/bikecross.jpg) no-repeat 12% 50% scroll;
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+}
+
+
+/**********border gradiente*************/
+
+.multbg-top-to-bottom {
+    border-top: 2px solid #3e71c2c7;
+    background-image: -webkit-linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%);
+    background-image: -webkit-linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%);
+    background-image: -moz-linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%),
+ -moz-linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%);
+    background-image: -o-linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%),
+ -o-linear-gradient(135deg, #3e71c2 0, rgba(28, 79, 159, 0.57)100%);
+    background-image: linear-gradient(135deg, #3e71c2d9 0, rgba(28, 79, 159, 0)100%), linear-gradient(135deg, #3e71c2d9 0, rgba(28, 79, 159, 0)100%);
+    -moz-background-size: 3px 100%;
+    background-size: 2px 11%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+  }

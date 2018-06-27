@@ -1,8 +1,9 @@
 <?php
-    require_once "../Datos/Da_usuario.php";
+    require_once 'C:\xampp\htdocs\Fitness\PDOGYM\Datos\DA_usuario.php';
 
 class usuario {
-    private $id_usuario; private $id_contrato; private $nom; private $apellido; private $edad; private $sexo; private $email; private $pass; private $terminos; private $direccion; private $postal; private $tel; private $dni; 
+    private $id_usuario; private $id_contrato; private $nom; private $apellido;
+    private $edad; private $sexo; private $email; private $pass; private $terminos; private $direccion; private $postal; private $tel; private $dni; 
     
         //contructor generico por defecto null
     public function __construct ($id_usuario=null,  $id_contrato=null, $nom=null, $apellido=null, $edad=null, $sexo=null, $email=null, $pass=null, $terminos=null, $direccion=null, $postal=null,  $tel=null, $dni=null) {
@@ -21,7 +22,6 @@ class usuario {
         $this->postal = $postal;
         $this->tel = $tel; 
         $this->dni = $dni; 
-
     }
     
     //GET
@@ -29,7 +29,7 @@ class usuario {
     public function getIdUsuario() {return $this->id_usuario;}
     public function getIdContrato() {return $this->id_contrato;}  
     public function getNom() {return $this->nom;}
-    public function getApellido() {return $this->apellido;}  
+    public function getApellido() {return $this->apellido;} 
     public function getEdad() {return $this->edad;} 
     public function getSexo() {return $this->sexo;}   
     public function getEmail() {return $this->email;}  
@@ -39,9 +39,9 @@ class usuario {
     public function getPostal() {return $this->postal;}
     public function getTel() {return $this->tel;}
     public function getDni() {return $this->dni;}
-    
     //SET
     //rellena el  atributo del objeto del que llama
+    
     public function setIdUsuario($id_usuario) {$this->id_usuario = $id_usuario;}
     public function setIdContrato($id_contrato) {$this->id_contrato = $id_contrato;}  
     public function setNom($nom) { $this->nom = $nom;}
@@ -56,9 +56,8 @@ class usuario {
     public function setTel($tel) { $this->tel = $tel;}
     public function setDni($dni) { $this->dni = $dni;}
     
-    
-    public function Insertar() {
-    	$objDataUsuario= new datausuario();//nuevo objeto datausuario de la clase usuario
+    public function Insertar(&$ErrorInfo) {
+    	$objDataUsuario = new datausuario();//nuevo objeto datausuario de la clase usuario
         /*
             if($this->direccion == '')
                 $this->direccion = 'null';
@@ -69,9 +68,31 @@ class usuario {
             if($this->dni == '' )
                 $this->dni = 'null';
         */
-        //el objeto->llama a insetar
-        $resultado = $objDataUsuario->Insertar($this->nom, $this->apellido, $this->edad, $this->sexo, $this->email, $this->pass, $this->terminos, $this->direccion, $this->postal, $this->tel, $this->dni);
+        //el objeto->llama a insertar
+        $resultado = $objDataUsuario->Insertar($ErrorInfo,$this->nom, $this->apellido, $this->edad, $this->sexo, $this->email, $this->pass, $this->terminos, $this->direccion, $this->postal, $this->tel, $this->dni);
 	    return $resultado;
+    }
+    
+    public function buscarUser(&$ErrorInfo, $email) {
+          $objDataUsuario = new datausuario();
+          $registro = $objDataUsuario->buscarUser($ErrorInfo,$email);
+        //registro es un array y en cada indice va un nombre de campo de la tabla
+         if ($registro)
+             //crea nuevo objeto con el registro de la base de datos
+        	return new usuario($registro['Id_usuario'] ,$registro['Id_contrato'], $registro['Nombre'] ,$registro['Apellidos'] ,$registro['Nacimiento'],$registro['Sexo'] ,$registro['Email'] ,$registro['Password'],$registro['Terminos'] ,$registro['Direccion'] ,$registro['CP'], $registro['Telefono'], $registro['Dni'] );
+        else 
+        	return false;
+    }
+    
+    public function comprobarUser(&$ErrorInfo, $emaillog, $passlog) {
+        $objDataUsuario = new datausuario();
+        $registro = $objDataUsuario->comprobarUser($emaillog, $passlog);
+    //registro es un array y en cada indice va un nombre de campo de la tabla
+        if ($registro)
+            //crea nuevo objeto con el registro de la base de datos
+        return new usuario($registro['Id_usuario'] ,$registro['Id_contrato'], $registro['Nombre'] ,$registro['Apellidos'] ,$registro['Nacimiento'],$registro['Sexo'] ,$registro['Email'] ,$registro['Password'],$registro['Terminos'] ,$registro['Direccion'] ,$registro['CP'], $registro['Telefono'], $registro['Dni'] );
+    else 
+        return false;
     }
     
 }

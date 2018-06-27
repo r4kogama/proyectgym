@@ -241,5 +241,12 @@ label{
     justify-content: right;
 }
 
+.f-row-evenly-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 
 

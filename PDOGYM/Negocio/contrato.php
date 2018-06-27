@@ -1,5 +1,5 @@
 <?php?
-    require_once "../Datos/Da_contrato.php";
+    require_once 'C:\xampp\htdocs\Fitness\PDOGYM\Datos\DA_contrato.php';
 
 class usuario {
      private $id_contrato; private $nomContrato; private $descripcion; private $precio; 
@@ -30,8 +30,7 @@ class usuario {
     public function setPrecio($precio) { $this->precio = $precio;} 
  
     /*
-    
-    public function Insertar() {
+    public function ListarContrato() {
     	$objDataContrato = new datacontrato();//nuevo objeto datacontrato de la clase contrato
         /*
             if($this->direccion == '')
@@ -47,6 +46,7 @@ class usuario {
         $resultado = $objDataContrato->Insertar($this->nomContrato, $this->apellido, $this->edad, $this->sexo, $this->email, $this->pass, $this->terminos, $this->direccion, $this->postal, $this->tel, $this->dni);
 	    return $resultado;
     }
-        */
+    */
+    
 }
 >
